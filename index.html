@@ -75,17 +75,41 @@
 								document.getElementById("period").innerText = "Period 1";
 								document.getElementById("period").textContent = "Period 1";
 							}
-							if(curMeridiem == "AM" && ((curHour == 9 && curMinute >= 0) && (curHour == 9 && curMinute <= 49))) {
+							else if(curMeridiem == "AM" && ((curHour == 9 && curMinute >= 0) && (curHour == 9 && curMinute <= 49))) {
 								document.getElementById("period").innerText = "Period 2";
 								document.getElementById("period").textContent = "Period 2";
 							}
-							if(curMeridiem == "AM" && ((curHour == 9 && curMinute >= 55) && (curHour == 10 && curMinute <= 44))) {
+							else if(curMeridiem == "AM" && ((curHour >= 9 && curMinute >= 55) && (curHour <= 10 && curMinute <= 44))) {
 								document.getElementById("period").innerText = "Period 3";
 								document.getElementById("period").textContent = "Period 3";
 							}
-							if(curMeridiem == "AM" && ((curHour == 10 && curMinute >= 50) && (curHour == 11 && curMinute <= 39))) {
+							else if(curMeridiem == "AM" && ((curHour >= 10 && curMinute >= 50) && (curHour <= 11 && curMinute <= 39))) {
 								document.getElementById("period").innerText = "Period 4";
 								document.getElementById("period").textContent = "Period 4";
+							}
+							else if((curHour >= 11 && curMinute >= 45 && curMeridiem == "AM") && (curHour <= 12 && curMinute <= 34 && curMeridiem == "PM")) {
+								document.getElementById("period").innerText = "Period 5";
+								document.getElementById("period").textContent = "Period 5";
+							}
+							else if(curMeridiem == "PM" && ((curHour >= 12 && curMinute >= 40) && (curHour <= 1 && curMinute <= 29))) {
+								document.getElementById("period").innerText = "Period 6";
+								document.getElementById("period").textContent = "Period 6";
+							}
+							else if(curMeridiem == "PM" && ((curHour >= 1 && curMinute >= 35) && (curHour <= 2 && curMinute <= 24))) {
+								document.getElementById("period").innerText = "Period 7";
+								document.getElementById("period").textContent = "Period 7";
+							}
+							else if(curMeridiem == "PM" && ((curHour >= 2 && curMinute >= 30) && (curHour <= 3 && curMinute <= 19))) {
+								document.getElementById("period").innerText = "Period 8";
+								document.getElementById("period").textContent = "Period 8";
+							}
+							else if((curHour >= 3 && curMinute >= 20 && curMeridiem == "PM") && (curHour <= 8 && curMinute <= 4 && curMeridiem == "AM")) {
+								document.getElementById("period").innerText = "No School ATM";
+								document.getElementById("period").textContent = "No School ATM";
+							}
+							else {
+								document.getElementById("period").innerText = "Passing Period";
+								document.getElementById("period").textContent = "Passing Period";
 							}
 
 						}
