@@ -65,9 +65,18 @@
 
 						setTimeout(showTime, 1000);
 
+						var hrMin = curHour + ":" + curMinute
+
 						if(dayOfWeek == "Saturday" || dayOfWeek == "Sunday") {
 							document.getElementById("period").innerText = "No School ATM";
 							document.getElementById("period").textContent = "No School ATM";
+						}
+
+						if(dayOfWeek == "Monday" || dayOfWeek == "Friday") {
+							if(curMeridiem == "AM" && (hrMin >= "8:05" && hrMin <= "8:55")) {
+								document.getElementById("period").innerText = "Period 1";
+								document.getElementById("period").textContent = "Period 1";
+							}
 						}
 
 					}
