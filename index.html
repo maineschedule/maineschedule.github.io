@@ -65,9 +65,9 @@
 
 						setTimeout(showTime, 1000);
 
-						if(curHour == 0) {
-							document.getElementById("period").innerText = "No School";
-							document.getElementById("period").textContent = "No School";
+						if(curHour == 0 & curMeridiem == "PM") {
+							document.getElementById("period").innerText = "BOI";
+							document.getElementById("period").textContent = "BOI";
 						}
 
 					}
