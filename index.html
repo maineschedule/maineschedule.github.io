@@ -55,7 +55,7 @@
 					function countDown(numMinutes) {
 						if(numMinutes == 0) {
 							document.getElementById("minutesleft").innerText = "";
-							break;
+							numMinutes = 0
 						}
 						else if(numMinutes == 1) {
 							document.getElementById("minutesleft").innerText = numMinutes + " " + "minute left until period ends";
