@@ -65,15 +65,15 @@
 
 						setTimeout(showTime, 1000);
 
-						var hrMin = curHour + ":" + curMinute
+						var hrMin = curHour + ":" + curMinute + ":" + curSeconds
 
 						if(dayOfWeek == "Monday" || dayOfWeek == "Sunday") {
 							document.getElementById("period").innerText = "No School ATM";
 							document.getElementById("period").textContent = "No School ATM";
 						}
 
-						if(dayOfWeek == "Saturday" || dayOfWeek == "Friday") {
-							if(curMeridiem == "AM" && (hrMin >= "8:05" && hrMin <= "8:55")) {
+						else if(dayOfWeek == "Saturday" || dayOfWeek == "Friday") {
+							if(curMeridiem == "AM" && (hrMin >= "8:05:00" && hrMin <= "8:55:00")) {
 								document.getElementById("period").innerText = "Period 1";
 								document.getElementById("period").textContent = "Period 1";
 							}
