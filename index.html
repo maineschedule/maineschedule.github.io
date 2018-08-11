@@ -71,8 +71,11 @@
 							document.getElementById("period").innerText = "No School";
 							document.getElementById("period").textContent = "No School";
 						}
-						if(dayOfWeek == "Saturday" || dayOfWeek == "Friday") {
-
+						else if(dayOfWeek == "Saturday" || dayOfWeek == "Friday") {
+							if(time == "11:25.00 AM") {
+								document.getElementById("period").innerText = "BOI";
+								document.getElementById("period").textContent = "BOI";
+							}
 						}
 
 					}
