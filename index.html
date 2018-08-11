@@ -73,11 +73,11 @@
 						}
 
 						else if(dayOfWeek == "Saturday" || dayOfWeek == "Friday") {
-							if(curMeridiem == "AM" && (hrMin >= "8:05:00" && hrMin <= "8:55:00")) {
+							if(curMeridiem == "AM" && (Date.parse(hrMin) >= Date.parse("8:05:00") && Date.parse(hrMin) <= Date.parse("8:55:00"))) {
 								document.getElementById("period").innerText = "Period 1";
 								document.getElementById("period").textContent = "Period 1";
 							}
-							if(curMeridiem == "AM" && (hrMin >= "9:00" && hrMin <= "9:50")) {
+							if(curMeridiem == "AM" && (Date.parse(hrMin) >= Date.parse("9:00") && Date.parse(hrMin) <= Date.parse("9:50"))) {
 								document.getElementById("period").innerText = "Period 2";
 								document.getElementById("period").textContent = "Period 2";
 							}
