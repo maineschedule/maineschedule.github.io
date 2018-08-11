@@ -15,7 +15,7 @@
 				white-space: nowrap;
 			}
 
-			.status{
+			.date{
 				position: absolute;
 				top: 50%;
 				left: 50%;
@@ -24,7 +24,7 @@
 				white-space: nowrap;
 			}
 
-			.dayandformat{
+			.period{
 				position: absolute;
 				top: 75%;
 				left: 50%;
@@ -40,8 +40,8 @@
 
 				<!--<div id="date" class="date"></div>-->
 				<div id="MyClockDisplay" class="clock"></div>
-				<div id="status" class="status"><p>Status<p></div> <!-- actual date -->
-				<div id="dayandformat"><p><p></div> <!-- period -->
+				<div id="date" class="date"></div> <!-- actual date -->
+				<div id="period" class="period"></div> <!-- period -->
 				<script type="text/javascript">
 
 					function showTime(){
@@ -62,8 +62,8 @@
 
 						document.getElementById("MyClockDisplay").innerText = today;
 						document.getElementById("MyClockDisplay").textContent = today;
-						document.getElementById("status").innerText = time;
-						document.getElementById("status").textContent = time;
+						document.getElementById("date").innerText = time;
+						document.getElementById("date").textContent = time;
 
 						setTimeout(showTime, 1000);
 					}
