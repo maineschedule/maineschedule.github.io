@@ -67,9 +67,12 @@
 
 						var curTime = curHour + ":" + curMinute + ":" + curSeconds
 
-						if(dayOfWeek == "Saturday" || dayOfWeek == "Sunday") {
-							document.getElementById("period").innerText = "No School ATM";
-							document.getElementById("period").textContent = "No School ATM";
+						if(dayOfWeek == "Monday" || dayOfWeek == "Sunday") {
+							document.getElementById("period").innerText = "No School";
+							document.getElementById("period").textContent = "No School";
+						}
+						if(dayOfWeek == "Saturday" || dayOfWeek == "Friday") {
+
 						}
 
 					}
