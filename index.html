@@ -65,29 +65,27 @@
 
 						setTimeout(showTime, 1000);
 
-						var hrMin = curHour + ":" + curMinute + ":" + curSeconds
-
 						if(dayOfWeek == "Monday" || dayOfWeek == "Sunday") {
 							document.getElementById("period").innerText = "No School ATM";
 							document.getElementById("period").textContent = "No School ATM";
 						}
 
 						else if(dayOfWeek == "Saturday" || dayOfWeek == "Friday") {
-							if(curMeridiem == "AM" && (Date.parse(hrMin) >= Date.parse("8:05:00") && Date.parse(hrMin) <= Date.parse("8:55:00"))) {
+							if(curMeridiem == "AM" && ((curHour == 8 && curMinute >= 5) && (curHour == 8 && curMinute <= 55))) {
 								document.getElementById("period").innerText = "Period 1";
 								document.getElementById("period").textContent = "Period 1";
 							}
-							if(curMeridiem == "AM" && (Date.parse(hrMin) >= Date.parse("9:00") && Date.parse(hrMin) <= Date.parse("9:50"))) {
+							if(curMeridiem == "AM" && ((curHour == 9 && curMinute >= 0) && (curHour == 9 && curMinute <= 50))) {
 								document.getElementById("period").innerText = "Period 2";
 								document.getElementById("period").textContent = "Period 2";
 							}
-							if(curMeridiem == "AM" && (hrMin >= "9:55" && hrMin <= "10:45")) {
+							if(curMeridiem == "AM" && ((curHour == 9 && curMinute >= 55) && (curHour == 10 && curMinute <= 45))) {
 								document.getElementById("period").innerText = "Period 3";
 								document.getElementById("period").textContent = "Period 3";
 							}
-							if(curMeridiem == "AM" && (hrMin >= "10:50" && hrMin <= "11:40")) {
-								document.getElementById("period").innerText = "Period 1";
-								document.getElementById("period").textContent = "Period 1";
+							if(curMeridiem == "AM" && ((curHour == 10 && curMinute >= 50) && (curHour == 11 && curMinute <= 40))) {
+								document.getElementById("period").innerText = "Period 4";
+								document.getElementById("period").textContent = "Period 4";
 							}
 
 						}
