@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" href="http://example.com/favicon.png">
 		<style type="text/css">
 			.clock{
 				position: absolute;
@@ -54,7 +55,7 @@
 						curHour = objToday.getHours() > 12 ? objToday.getHours() - 12 : (objToday.getHours() < 10 ? "0" + objToday.getHours() : objToday.getHours()),
 						curMinute = objToday.getMinutes() < 10 ? "0" + objToday.getMinutes() : objToday.getMinutes(),
 						curSeconds = objToday.getSeconds() < 10 ? "0" + objToday.getSeconds() : objToday.getSeconds(),
-						curMeridiem = objToday.getHours() > 12 ? "PM" : "AM";
+						curMeridiem = objToday.getHours() > 12 ? "AM" : "PM";
 						var today = dayOfWeek + "," + " " + curMonth + " " + dayOfMonth + "," + " " + curYear;
 						var time = curHour + ":" + curMinute + "." + curSeconds + " " + curMeridiem
 
