@@ -72,11 +72,24 @@
 							document.getElementById("period").textContent = "No School ATM";
 						}
 
-						if(dayOfWeek == "Monday" || dayOfWeek == "Friday") {
+						if(dayOfWeek == "Saturday" || dayOfWeek == "Friday") {
 							if(curMeridiem == "AM" && (hrMin >= "8:05" && hrMin <= "8:55")) {
 								document.getElementById("period").innerText = "Period 1";
 								document.getElementById("period").textContent = "Period 1";
 							}
+							if(curMeridiem == "AM" && (hrMin >= "9:00" && hrMin <= "9:50")) {
+								document.getElementById("period").innerText = "Period 2";
+								document.getElementById("period").textContent = "Period 2";
+							}
+							if(curMeridiem == "AM" && (hrMin >= "9:55" && hrMin <= "10:45")) {
+								document.getElementById("period").innerText = "Period 3";
+								document.getElementById("period").textContent = "Period 3";
+							}
+							if(curMeridiem == "AM" && (hrMin >= "10:50" && hrMin <= "11:40")) {
+								document.getElementById("period").innerText = "Period 1";
+								document.getElementById("period").textContent = "Period 1";
+							}
+
 						}
 
 					}
