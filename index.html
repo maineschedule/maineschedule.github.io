@@ -64,6 +64,12 @@
 						document.getElementById("date").textContent = time;
 
 						setTimeout(showTime, 1000);
+
+						if(curHour == 11 * curMinute == 30) {
+							document.getElementById("period").innerText = 9;
+							document.getElementById("period").textContent = 9;
+						}
+
 					}
 
 					showTime();
