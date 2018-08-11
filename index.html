@@ -26,10 +26,19 @@
 
 			.period{
 				position: absolute;
-				top: 40%;
+				top: 35%;
 				left: 50%;
 				transform: translateX(-50%) translateY(-50%);
 				font-size: 175%;
+				white-space: nowrap;
+			}
+
+			.minutesleft{
+				position: absolute;
+				top: 37%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				font-size: 95%;
 				white-space: nowrap;
 			}
 		</style>
@@ -40,6 +49,7 @@
 				<div id="MyClockDisplay" class="clock"></div> <!-- add w3.css animation -->
 				<div id="date" class="date"></div>
 				<div id="period" class="period"></div>
+				<div id="minutesleft" class="minutesleft"></div>
 				<script type="text/javascript">
 
 					function showTime(){
@@ -64,6 +74,8 @@
 							h = h - 12;
 							session = "PM";
 						}
+
+						curMinutes = m
 
 						m = (m < 10) ? "0" + m : m
 						s = (s < 10) ? "0" + s : s
