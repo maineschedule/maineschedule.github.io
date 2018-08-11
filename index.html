@@ -65,8 +65,9 @@
 
 						setTimeout(showTime, 1000);
 
-						if(curHour == 11 & curMinute == 48) {
-							document.getElementById("period").innerText = 2;
+						if(curHour < 12) {
+							document.getElementById("period").innerText = "Period 2";
+							document.getElementById("period").textContent = "Period 2";
 						}
 
 					}
