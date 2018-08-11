@@ -71,19 +71,19 @@
 						}
 
 						else if(dayOfWeek == "Saturday" || dayOfWeek == "Friday") {
-							if(curMeridiem == "AM" && ((curHour == 8 && curMinute >= 5) && (curHour == 8 && curMinute <= 55))) {
+							if(curMeridiem == "AM" && ((curHour == 8 && curMinute >= 5 && curSeconds == 0) && (curHour == 8 && curMinute <= 55 && curSeconds == 0))) {
 								document.getElementById("period").innerText = "Period 1";
 								document.getElementById("period").textContent = "Period 1";
 							}
-							if(curMeridiem == "AM" && ((curHour == 9 && curMinute >= 0) && (curHour == 9 && curMinute <= 50))) {
+							if(curMeridiem == "AM" && ((curHour == 9 && curMinute >= 0 && curSeconds == 0) && (curHour == 9 && curMinute <= 50 && curSeconds == 0))) {
 								document.getElementById("period").innerText = "Period 2";
 								document.getElementById("period").textContent = "Period 2";
 							}
-							if(curMeridiem == "AM" && ((curHour == 9 && curMinute >= 55) && (curHour == 10 && curMinute <= 45))) {
+							if(curMeridiem == "AM" && ((curHour == 9 && curMinute >= 55 && curSeconds == 0) && (curHour == 10 && curMinute <= 45 && curSeconds == 0))) {
 								document.getElementById("period").innerText = "Period 3";
 								document.getElementById("period").textContent = "Period 3";
 							}
-							if(curMeridiem == "AM" && ((curHour == 10 && curMinute >= 50) && (curHour == 11 && curMinute <= 40))) {
+							if(curMeridiem == "AM" && ((curHour == 10 && curMinute >= 50 && curSeconds == 0) && (curHour == 11 && curMinute <= 40 && curSeconds == 0))) {
 								document.getElementById("period").innerText = "Period 4";
 								document.getElementById("period").textContent = "Period 4";
 							}
