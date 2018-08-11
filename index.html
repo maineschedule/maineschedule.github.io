@@ -57,8 +57,8 @@
 						curMinute = objToday.getMinutes() < 10 ? "0" + objToday.getMinutes() : objToday.getMinutes(),
 						curSeconds = objToday.getSeconds() < 10 ? "0" + objToday.getSeconds() : objToday.getSeconds(),
 						curMeridiem = objToday.getHours() > 12 ? "PM" : "AM";
-						var today = curMeridiem + " " + dayOfWeek + " " + dayOfMonth + " of " + curMonth + ", " + curYear;
-						var time = curHour + ":" + curMinute + "." + curSeconds
+						var today = dayOfWeek + " " + dayOfMonth + " of " + curMonth + ", " + curYear;
+						var time = curHour + ":" + curMinute + "." + curSeconds + " " + curMeridiem
 
 						document.getElementById("MyClockDisplay").innerText = today;
 						document.getElementById("MyClockDisplay").textContent = today;
