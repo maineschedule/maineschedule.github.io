@@ -53,10 +53,17 @@
 				<script type="text/javascript">
 
 					function countDown(numMinutes) {
-						return numMinutes - 1;
 						if(numMinutes == 0) {
 							document.getElementById("minutesleft").innerText = "";
+							break;
 						}
+						else if(numMinutes == 1) {
+							document.getElementById("minutesleft").innerText = numMinutes + " " + "minute left until period ends";
+						}
+						else {
+							document.getElementById("minutesleft").innerText = numMinutes + "minutes left until period ends";
+						}
+						return numMinutes - 1;
 					}
 
 					function showTime(){
