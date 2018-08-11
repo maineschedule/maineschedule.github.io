@@ -57,10 +57,13 @@
 						curMinute = objToday.getMinutes() < 10 ? "0" + objToday.getMinutes() : objToday.getMinutes(),
 						curSeconds = objToday.getSeconds() < 10 ? "0" + objToday.getSeconds() : objToday.getSeconds(),
 						curMeridiem = objToday.getHours() > 12 ? "PM" : "AM";
-						var today = curHour + ":" + curMinute + "." + curSeconds + curMeridiem + " " + dayOfWeek + " " + dayOfMonth + " of " + curMonth + ", " + curYear;
+						var today = curMeridiem + " " + dayOfWeek + " " + dayOfMonth + " of " + curMonth + ", " + curYear;
+						var time = curHour + ":" + curMinute + "." + curSeconds
 
 						document.getElementById("MyClockDisplay").innerText = today;
 						document.getElementById("MyClockDisplay").textContent = today;
+						document.getElementById("status").innerText = time;
+						document.getElementById("status").textContent = time;
 
 						setTimeout(showTime, 1000);
 					}
