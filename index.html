@@ -5,7 +5,6 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="icon" href="http://example.com/favicon.png">
 		<style type="text/css">
 			.clock{
 				position: absolute;
@@ -52,9 +51,9 @@
 						months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
 						curMonth = months[objToday.getMonth()],
 						curYear = objToday.getFullYear(),
-						h = date.getHours();
-						m = date.getMinutes();
-						s = date.getSeconds();
+						h = objToday.getHours();
+						m = objToday.getMinutes();
+						s = objToday.getSeconds();
 						var session = "AM";
 
 						if(h == 0) {
