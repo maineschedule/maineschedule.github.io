@@ -49,6 +49,7 @@
 						var h = date.getHours();
 						var m = date.getMinutes();
 						var s = date.getSeconds();
+						var month = date.getMonth();
 						var session = "AM";
 
 						if(h == 0){
@@ -67,6 +68,8 @@
 						var time = h + ":" + m + ":" + s + " " + session;
 						document.getElementById("MyClockDisplay").innerText = time;
 						document.getElementById("MyClockDisplay").textContent = time;
+						document.getElementById("status").innerText = month;
+						document.getElementById("status").textContent = month;
 
 						setTimeout(showTime, 1000);
 					}
