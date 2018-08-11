@@ -107,7 +107,6 @@ input, select, textarea {
 		@media screen and (max-height: 640px) {
 
 			html, body {
-				height: auto;
 				min-height: 100%;
 			}
 
