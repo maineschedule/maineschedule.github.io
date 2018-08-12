@@ -70,11 +70,10 @@
 						function timeLeft(periodEndTime) {
 
 							var currentTime = h + ":" + m + "." + s;
-							var diffMs = (periodEndTime - currentTime);
-							var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000);
+							var minutesApart = periodEndTime - currentTime
 
-							document.getElementById("minutesleft").innerText = currentTime;
-							document.getElementById("minutesleft").textContent = currentTime;
+							document.getElementById("minutesleft").innerText = minutesApart;
+							document.getElementById("minutesleft").textContent = minutesApart;
 						}
 
 						timeLeft("14:30.00");
