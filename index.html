@@ -53,6 +53,9 @@
 				<script type="text/javascript">
 
 					function countDown(numMinutes) {
+
+						setInterval(function(){ document.getElementById("minutesleft").innerText = (numMinutes - 1) + " " + "minutes until period ends"; }, 1000);
+
 						if(numMinutes == 0) {
 							document.getElementById("minutesleft").innerText = "";
 							numMinutes = 0
@@ -63,8 +66,9 @@
 						else {
 							document.getElementById("minutesleft").innerText = numMinutes + " " + "minutes until period ends";
 						}
-						return numMinutes - 1;
 					}
+
+					countDown(50);
 
 					function showTime(){
 
@@ -93,8 +97,6 @@
 						else if(h = 12) {
 							session = "PM";
 						}
-
-						curMinutes = m
 
 						m = (m < 10) ? "0" + m : m
 						s = (s < 10) ? "0" + s : s
@@ -125,44 +127,35 @@
 							if(time >= "8:05.00" && time <= "8:55.00") {
 								document.getElementById("period").innerText = "Period 1";
 								document.getElementById("period").textContent = "Period 1";
-								countDown(50);
 							}
 							else if(time >= "9:00.00" && time <= "9:50.00") {
 								document.getElementById("period").innerText = "Period 2";
 								document.getElementById("period").textContent = "Period 2";
-								countDown(50);
 							}
 							else if(time >= "9:55.00" && time <= "10:45.00") {
 								document.getElementById("period").innerText = "Period 3";
 								document.getElementById("period").textContent = "Period 3";
-								countDown(50);
 							}
 							else if(time >= "10:50.00" && time <= "11:40.00") {
 								document.getElementById("period").innerText = "Period 4";
 								document.getElementById("period").textContent = "Period 4";
-								countDown(50);
 							}
 							else if(time >= "11:45.00" && time <= "12:35.00") {
 								document.getElementById("period").innerText = "Period 5";
 								document.getElementById("period").textContent = "Period 5";
-								countDown(50);
 							}
 							else if(time >= "12:40.00" && time <= "13:30.00") {
 								document.getElementById("period").innerText = "Period 6";
 								document.getElementById("period").textContent = "Period 6";
-								countDown(50);
 							}
 							else if(time >= "13:35.00" && time <= "14:25.00") {
 								document.getElementById("period").innerText = "Period 7";
 								document.getElementById("period").textContent = "Period 7";
-								if(time == "13:35.00") {
-									countDown(50);
-								}
+
 							}
 							else if(time >= "14:30.00" && time <= "15:20.00") {
 								document.getElementById("period").innerText = "Period 8";
 								document.getElementById("period").textContent = "Period 8";
-								countDown(50);
 							}
 							else if(time > "15:20.00") {
 								document.getElementById("period").innerText = "No School";
