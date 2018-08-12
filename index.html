@@ -94,7 +94,7 @@
 						m = (m < 10) ? "0" + m : m
 						s = (s < 10) ? "0" + s : s
 
-						var time = h + ":" + m + "." + s + " " + session;
+						var time = h + ":" + m + "." + s;
 						var today = dayOfWeek + "," + " " + curMonth + " " + dayOfMonth + "," + " " + curYear;
 
 
@@ -111,7 +111,7 @@
 							document.getElementById("minutesleft").innerText = "enjoy your weekend :)";
 						}
 						else if(dayOfWeek == "Saturday" || dayOfWeek == "Friday") {
-							if(time >= "8:05.00 AM" && time <= "8:55.00 AM") {
+							if(time >= "8:05.00" && time <= "8:55.00" && session == "AM") {
 								document.getElementById("period").innerText = "Period 1";
 								document.getElementById("period").textContent = "Period 1";
 							}
