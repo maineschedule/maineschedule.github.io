@@ -72,7 +72,7 @@
 							var stringHours = h.toString();
 							var stringMinutes = m.toString();
 
-							var start_time = stringHours + stringMinutes;
+							var start_time = "1000";
 							var end_time = periodEndTime;
 							var start_hour = start_time.slice(0, -2);
 							var start_minutes = start_time.slice(-2);
@@ -84,19 +84,19 @@
 							var endDate = new Date(0,0,0, end_hour, end_minutes);
 
 							var millis = endDate - startDate;
-							var minutesApart = millis/1000/60;
+							var minutes = millis/1000/60;
 
 							if(minutesApart <= 0) {
 								document.getElementById("minutesleft").innerText = "";
 								document.getElementById("minutesleft").textContent = "";
 							}
 							else if(minutesApart == 1) {
-								document.getElementById("minutesleft").innerText = minutesApart + " " + "minute until period ends";
-								document.getElementById("minutesleft").textContent = minutesApart + " " + "minute until period ends";
+								document.getElementById("minutesleft").innerText = minutes + " " + "minute until period ends";
+								document.getElementById("minutesleft").textContent = minutes + " " + "minute until period ends";
 							}
 							else {
-								document.getElementById("minutesleft").innerText = minutesApart + " " + "minutes until period ends";
-								document.getElementById("minutesleft").textContent = minutesApart + " " + "minutes until period ends";
+								document.getElementById("minutesleft").innerText = minutes + " " + "minutes until period ends";
+								document.getElementById("minutesleft").textContent = minutes + " " + "minutes until period ends";
 							}
 						}
 
