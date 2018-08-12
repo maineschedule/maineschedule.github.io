@@ -125,7 +125,6 @@
 						var displayTime = h + ":" + m + "." + s + " " + session;
 						var today = dayOfWeek + "," + " " + curMonth + " " + dayOfMonth + "," + " " + curYear;
 
-
 						document.getElementById("MyClockDisplay").innerText = today;
 						document.getElementById("MyClockDisplay").textContent = today;
 						document.getElementById("date").innerText = displayTime;
@@ -173,7 +172,7 @@
 								document.getElementById("period").textContent = "Period 8";
 								timeLeft("1520");
 							}
-							else if(time > "15:20.00") {
+							else if(time >= "15:20.00") {
 								document.getElementById("period").innerText = "No School";
 								document.getElementById("period").textContent = "No School";
 								document.getElementById("minutesleft").innerText = "have a nice evening :)";
@@ -200,7 +199,7 @@
 								document.getElementById("period").innerText = "Period 7";
 								document.getElementById("period").textContent = "Period 7";
 							}
-							else if(time > "15:20.00") {
+							else if(time >= "15:20.00") {
 								document.getElementById("period").innerText = "No School";
 								document.getElementById("period").textContent = "No School";
 								document.getElementById("minutesleft").innerText = "have a nice evening :)";
@@ -228,7 +227,7 @@
 								document.getElementById("period").innerText = "Period 8";
 								document.getElementById("period").textContent = "Period 8";
 							}
-							else if(time > "15:20.00") {
+							else if(time >= "15:20.00") {
 								document.getElementById("period").innerText = "No School";
 								document.getElementById("period").textContent = "No School";
 								document.getElementById("minutesleft").innerText = "have a nice evening :)";
@@ -273,7 +272,7 @@
 								document.getElementById("period").innerText = "Period 8";
 								document.getElementById("period").textContent = "Period 8";
 							}
-							else if(time > "15:20.00 PM") {
+							else if(time >= "15:20.00") {
 								document.getElementById("period").innerText = "No School";
 								document.getElementById("period").textContent = "No School";
 								document.getElementById("minutesleft").innerText = "have a nice evening :)";
