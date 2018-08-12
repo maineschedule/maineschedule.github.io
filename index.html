@@ -69,14 +69,14 @@
 
 						function timeLeft(periodEndTime) {
 
-							var currentTime = h + ":" + m + "." + s;
+							var currentTime = "14:15:00"
 							var minutesApart = periodEndTime - currentTime
 
 							document.getElementById("minutesleft").innerText = minutesApart;
 							document.getElementById("minutesleft").textContent = minutesApart;
 						}
 
-						timeLeft("14:30.00");
+						timeLeft("14:30:00");
 
 						if(h == 0) {
 							h = 12;
