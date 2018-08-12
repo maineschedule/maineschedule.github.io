@@ -58,10 +58,10 @@
 							numMinutes = 0
 						}
 						else if(numMinutes == 1) {
-							document.getElementById("minutesleft").innerText = numMinutes + " " + "minute left until period ends";
+							document.getElementById("minutesleft").innerText = numMinutes + " " + "minute until period ends";
 						}
 						else {
-							document.getElementById("minutesleft").innerText = numMinutes + " " + "minutes left until period ends";
+							document.getElementById("minutesleft").innerText = numMinutes + " " + "minutes until period ends";
 						}
 						return numMinutes - 1;
 					}
@@ -155,7 +155,9 @@
 							else if(time >= "13:35.00" && time <= "14:25.00") {
 								document.getElementById("period").innerText = "Period 7";
 								document.getElementById("period").textContent = "Period 7";
-								countDown(50);
+								if(time == "13:35.00") {
+									countDown(50);
+								}
 							}
 							else if(time >= "14:30.00" && time <= "15:20.00") {
 								document.getElementById("period").innerText = "Period 8";
