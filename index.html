@@ -67,6 +67,11 @@
 					}
 
 					function showTime(){
+
+						if(window.innerHeight > window.innerWidth){
+    						document.getElementsByTagName("body")[0].style.transform = "rotate(90deg)";
+						}
+
 						var objToday = new Date(),
 						weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
 						dayOfWeek = weekday[objToday.getDay()],
