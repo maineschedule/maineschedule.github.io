@@ -73,8 +73,8 @@
 							var diffMs = (periodEndTime - currentTime);
 							var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000);
 
-							document.getElementById("minutesleft").innerText = "diffMins";
-							document.getElementById("minutesleft").textContent = "diffMins";
+							document.getElementById("minutesleft").innerText = diffMins;
+							document.getElementById("minutesleft").textContent = diffMins;
 						}
 
 						timeLeft("14:30.00");
