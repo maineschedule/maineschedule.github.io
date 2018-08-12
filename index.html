@@ -69,8 +69,10 @@
 
 						function timeLeft(periodEndTime) {
 
-							var currentTime = h + m;
-							var minutesApart = periodEndTime - currentTime;
+							calcHours = h.toString();
+							calcMinutes = m.toString();
+							var currentTime = calcHours + calcMinutes;
+							var minutesApart = Number(periodEndTime) - Number(currentTime);
 
 							document.getElementById("minutesleft").innerText = minutesApart;
 							document.getElementById("minutesleft").textContent = minutesApart;
