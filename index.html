@@ -122,12 +122,12 @@
 
 						setTimeout(showTime, 1000);
 
-						if(dayOfWeek == "Saturday" || dayOfWeek == "Monday") {
+						if(dayOfWeek == "Saturday" || dayOfWeek == "Sunday") {
 							document.getElementById("period").innerText = "No School";
 							document.getElementById("period").textContent = "No School";
 							document.getElementById("minutesleft").innerText = "enjoy your weekend :)";
 						}
-						else if(dayOfWeek == "Sunday" || dayOfWeek == "Friday") {
+						else if(dayOfWeek == "Monday" || dayOfWeek == "Friday") {
 							if(time >= "8:05.00" && time <= "8:55.00") {
 								document.getElementById("period").innerText = "Period 1";
 								document.getElementById("period").textContent = "Period 1";
@@ -171,6 +171,7 @@
 							else if(time >= "15:20.00") {
 								document.getElementById("period").innerText = "No School";
 								document.getElementById("period").textContent = "No School";
+								document.getElementById("minutesleft").innerText = "have a nice evening :)";
 							}
 							else {
 								document.getElementById("period").innerText = "Passing Period";
@@ -181,18 +182,22 @@
 							if(time >= "8:05.00" && time <= "9:35.00") {
 								document.getElementById("period").innerText = "Period 1";
 								document.getElementById("period").textContent = "Period 1";
+								timeLeft(9, 36);
 							}
 							else if(time >= "9:40.00" && time <= "11:10.00") {
 								document.getElementById("period").innerText = "Period 3";
 								document.getElementById("period").textContent = "Period 3";
+								timeLeft(11, 11);
 							}
 							else if(time >= "11:20.00" && time <= "13.40:00") {
 								document.getElementById("period").innerText = "Period 5";
 								document.getElementById("period").textContent = "Period 5";
+								timeLeft(13, 41);
 							}
 							else if(time >= "13:50.00" && time < "15:20.00") {
 								document.getElementById("period").innerText = "Period 7";
 								document.getElementById("period").textContent = "Period 7";
+								timeLeft(15, 21);
 							}
 							else if(time >= "15:20.00") {
 								document.getElementById("period").innerText = "No School";
@@ -209,18 +214,22 @@
 							if(time >= "8:05.00" && time <= "9:35.00") {
 								document.getElementById("period").innerText = "Period 2";
 								document.getElementById("period").textContent = "Period 2";
+								timeLeft(9, 36);
 							}
 							else if(time >= "9:40.00" && time <= "11:10.00") {
 								document.getElementById("period").innerText = "Period 4";
 								document.getElementById("period").textContent = "Period 4";
+								timeLeft(11, 11);
 							}
 							else if(time >= "11:20.00" && time <= "13.40:00") {
 								document.getElementById("period").innerText = "Period 6";
 								document.getElementById("period").textContent = "Period 6";
+								timeLeft(13, 41);
 							}
 							else if(time >= "13:50.00" && time < "15:20.00") {
 								document.getElementById("period").innerText = "Period 8";
 								document.getElementById("period").textContent = "Period 8";
+								timeLeft(15, 21);
 							}
 							else if(time >= "15:20.00") {
 								document.getElementById("period").innerText = "No School";
@@ -238,34 +247,42 @@
 							if(time >= "8:45.00" && time <= "9:30.00") {
 								document.getElementById("period").innerText = "Period 1";
 								document.getElementById("period").textContent = "Period 1";
+								timeLeft(9, 31);
 							}
 							else if(time >= "9:35.00" && time <= "10:20.00") {
 								document.getElementById("period").innerText = "Period 2";
 								document.getElementById("period").textContent = "Period 2";
+								timeLeft(10, 21);
 							}
 							else if(time >= "10:25.00" && time <= "11:10.00") {
 								document.getElementById("period").innerText = "Period 3";
 								document.getElementById("period").textContent = "Period 3";
+								timeLeft(11, 11);
 							}
 							else if(time >= "11:15.00" && time <= "12:00.00") {
 								document.getElementById("period").innerText = "Period 4";
 								document.getElementById("period").textContent = "Period 4";
+								timeLeft(12, 1);
 							}
 							else if(time >= "12:05.00" && time <= "12:50.00") {
 								document.getElementById("period").innerText = "Period 5";
 								document.getElementById("period").textContent = "Period 5";
+								timeLeft(12, 51);
 							}
 							else if(time >= "12:55.00" && time <= "13:40.00") {
 								document.getElementById("period").innerText = "Period 6";
 								document.getElementById("period").textContent = "Period 6";
+								timeLeft(13, 41);
 							}
 							else if(time >= "13:45.00" && time <= "14:30.00") {
 								document.getElementById("period").innerText = "Period 7";
 								document.getElementById("period").textContent = "Period 7";
+								timeLeft(14, 31);
 							}
 							else if(time >= "14:35.00" && time < "15:20.00") {
 								document.getElementById("period").innerText = "Period 8";
 								document.getElementById("period").textContent = "Period 8";
+								timeLeft(15, 21);
 							}
 							else if(time >= "15:20.00") {
 								document.getElementById("period").innerText = "No School";
