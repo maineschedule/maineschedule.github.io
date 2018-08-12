@@ -95,13 +95,14 @@
 						s = (s < 10) ? "0" + s : s
 
 						var time = h + ":" + m + "." + s;
+						var displayTime = h + ":" + m + "." + s + " " + session;
 						var today = dayOfWeek + "," + " " + curMonth + " " + dayOfMonth + "," + " " + curYear;
 
 
 						document.getElementById("MyClockDisplay").innerText = today;
 						document.getElementById("MyClockDisplay").textContent = today;
-						document.getElementById("date").innerText = time;
-						document.getElementById("date").textContent = time;
+						document.getElementById("date").innerText = displayTime;
+						document.getElementById("date").textContent = displayTime;
 
 						setTimeout(showTime, 1000);
 
