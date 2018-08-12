@@ -112,43 +112,51 @@
 
 						setTimeout(showTime, 1000);
 
-						if(dayOfWeek == "Monday" || dayOfWeek == "Sunday") {
+						if(dayOfWeek == "Saturday" || dayOfWeek == "Monday") {
 							document.getElementById("period").innerText = "No School";
 							document.getElementById("period").textContent = "No School";
 							document.getElementById("minutesleft").innerText = "enjoy your weekend :)";
 						}
-						else if(dayOfWeek == "Saturday" || dayOfWeek == "Friday") {
+						else if(dayOfWeek == "Sunday" || dayOfWeek == "Friday") {
 							if(time >= "8:05.00" && time <= "8:55.00") {
 								document.getElementById("period").innerText = "Period 1";
 								document.getElementById("period").textContent = "Period 1";
+								countDown(50);
 							}
 							else if(time >= "9:00.00" && time <= "9:50.00") {
 								document.getElementById("period").innerText = "Period 2";
 								document.getElementById("period").textContent = "Period 2";
+								countDown(50);
 							}
 							else if(time >= "9:55.00" && time <= "10:45.00") {
 								document.getElementById("period").innerText = "Period 3";
 								document.getElementById("period").textContent = "Period 3";
+								countDown(50);
 							}
 							else if(time >= "10:50.00" && time <= "11:40.00") {
 								document.getElementById("period").innerText = "Period 4";
 								document.getElementById("period").textContent = "Period 4";
+								countDown(50);
 							}
 							else if(time >= "11:45.00" && time <= "12:35.00") {
 								document.getElementById("period").innerText = "Period 5";
 								document.getElementById("period").textContent = "Period 5";
+								countDown(50);
 							}
 							else if(time >= "12:40.00" && time <= "13:30.00") {
 								document.getElementById("period").innerText = "Period 6";
 								document.getElementById("period").textContent = "Period 6";
+								countDown(50);
 							}
 							else if(time >= "13:35.00" && time <= "14:25.00") {
 								document.getElementById("period").innerText = "Period 7";
 								document.getElementById("period").textContent = "Period 7";
+								countDown(50);
 							}
 							else if(time >= "14:30.00" && time <= "15:20.00") {
 								document.getElementById("period").innerText = "Period 8";
 								document.getElementById("period").textContent = "Period 8";
+								countDown(50);
 							}
 							else if(time > "15:20.00") {
 								document.getElementById("period").innerText = "No School";
