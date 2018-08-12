@@ -167,20 +167,12 @@
 								document.getElementById("period").textContent = "Period 7";
 
 							}
-							else if(time >= "14:30.00" && time <= "15:20.00") {
+							else if(time >= "14:30.00" && time < "15:20.00") {
 								document.getElementById("period").innerText = "Period 8";
 								document.getElementById("period").textContent = "Period 8";
 								timeLeft("1520");
 							}
-							else if(time >= "15:20.00") {
-								document.getElementById("period").innerText = "No School";
-								document.getElementById("period").textContent = "No School";
-								document.getElementById("minutesleft").innerText = "have a nice evening :)";
-							}
-							else {
-								document.getElementById("period").innerText = "Passing Period";
-								document.getElementById("period").textContent = "Passing Period";
-							}
+							
 						}
 						else if(dayOfWeek == "Tuesday") {
 							if(time >= "8:05.00" && time <= "9:35.00") {
@@ -195,7 +187,7 @@
 								document.getElementById("period").innerText = "Period 5";
 								document.getElementById("period").textContent = "Period 5";
 							}
-							else if(time >= "13:50.00" && time <= "15:20.00") {
+							else if(time >= "13:50.00" && time < "15:20.00") {
 								document.getElementById("period").innerText = "Period 7";
 								document.getElementById("period").textContent = "Period 7";
 							}
@@ -223,7 +215,7 @@
 								document.getElementById("period").innerText = "Period 6";
 								document.getElementById("period").textContent = "Period 6";
 							}
-							else if(time >= "13:50.00" && time <= "15:20.00") {
+							else if(time >= "13:50.00" && time < "15:20.00") {
 								document.getElementById("period").innerText = "Period 8";
 								document.getElementById("period").textContent = "Period 8";
 							}
@@ -268,7 +260,7 @@
 								document.getElementById("period").innerText = "Period 7";
 								document.getElementById("period").textContent = "Period 7";
 							}
-							else if(time >= "14:35.00" && time <= "15:20.00") {
+							else if(time >= "14:35.00" && time < "15:20.00") {
 								document.getElementById("period").innerText = "Period 8";
 								document.getElementById("period").textContent = "Period 8";
 							}
