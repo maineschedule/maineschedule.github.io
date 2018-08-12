@@ -67,12 +67,17 @@
 						s = objToday.getSeconds();
 						var session = "AM";
 
-						function timeLeft(periodLen) {
-							document.getElementById("minutesleft").innerText = "LEAGUE OF LEGENDS";
-							document.getElementById("minutesleft").textContent = "LEAGUE OF LEGENDS";
+						function timeLeft(periodEndTime) {
+
+							var currentTime = h + ":" + m + "." + s;
+							var diffMs = (periodEndTime - currentTime);
+							var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000);
+
+							document.getElementById("minutesleft").innerText = "diffMins";
+							document.getElementById("minutesleft").textContent = "diffMins";
 						}
 
-						timeLeft(23123123);
+						timeLeft("14:30.00");
 
 						if(h == 0) {
 							h = 12;
