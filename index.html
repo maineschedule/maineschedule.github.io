@@ -74,8 +74,18 @@
 							var currentTime = calcHours + calcMinutes;
 							var minutesApart = Number(periodEndTime) - Number(currentTime);
 
-							document.getElementById("minutesleft").innerText = minutesApart;
-							document.getElementById("minutesleft").textContent = minutesApart;
+							if(minutesApart == 0) {
+								document.getElementById("minutesleft").innerText = "";
+								document.getElementById("minutesleft").textContent = "";
+							}
+							else if(minutesApart == 1) {
+								document.getElementById("minutesleft").innerText = minutesApart + " " + "minute until period ends";
+								document.getElementById("minutesleft").textContent = minutesApart + " " + "minute until period ends";
+							}
+							else {
+								document.getElementById("minutesleft").innerText = minutesApart + " " + "minutes until period ends";
+								document.getElementById("minutesleft").textContent = minutesApart + " " + "minutes until period ends";
+							}
 						}
 
 						timeLeft("1445");
