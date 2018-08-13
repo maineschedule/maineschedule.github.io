@@ -65,7 +65,11 @@
 						h = objToday.getHours();
 						m = objToday.getMinutes();
 						s = objToday.getSeconds();
-						var session = "AM";
+						var session = h >= 12 ? "PM" : "AM";
+						h = h % 12;
+						h = h ? h : 12;
+						m = m < 10 ? "0" + m : m;
+						s = s < 10 ? "0" + s : s;
 
 						function timeLeft(endHour, endMinute) {
 
@@ -89,22 +93,6 @@
 								document.getElementById("minutesleft").textContent = minutesApart + " " + "minutes until period ends";
 							}
 						}
-
-						if(h == 0) {
-							h = 12;
-							session = "AM";
-						}
-
-						else if(h > 12) {
-							h = h - 12;
-							session = "PM";
-						}
-						else if(h = 12) {
-							session = "PM";
-						}
-
-						m = (m < 10) ? "0" + m : m
-						s = (s < 10) ? "0" + s : s
 
 						mHours = objToday.getHours();
 						mMinutes = objToday.getMinutes();
