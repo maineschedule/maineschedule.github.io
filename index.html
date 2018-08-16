@@ -100,14 +100,14 @@
 						mSeconds = objToday.getSeconds();
 
 						var mHours = objToday.getHours();
-						var time = mHours + ":" + m + "." + s;
+						var time = mHours + ":" + mMinutes + "." + mSeconds;
 						var displayTime = h + ":" + m + "." + s + " " + session;
 						var today = dayOfWeek + "," + " " + curMonth + " " + dayOfMonth + "," + " " + curYear;
 
 						document.getElementById("MyClockDisplay").innerText = today;
 						document.getElementById("MyClockDisplay").textContent = today;
-						document.getElementById("date").innerText = displayTime;
-						document.getElementById("date").textContent = displayTime;
+						document.getElementById("date").innerText = time;
+						document.getElementById("date").textContent = time;
 
 						setTimeout(showTime, 1000);
 
