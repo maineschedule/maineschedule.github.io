@@ -72,7 +72,7 @@
 						m = m < 10 ? "0" + m : m;
 						s = s < 10 ? "0" + s : s;
 
-						function timeLeft(endHour, endMinute) {
+						function timeLeft(endHour, endMinute, type) {
 
 							var dateEndTime = new Date(1000, 0, 1, endHour, endMinute);
 							var dateRightNow = new Date();
@@ -81,18 +81,23 @@
 							timeDiff = dateEndTime - dateRightNow;
 							minutesApart = Math.floor((timeDiff/1000)/60);
 
-							if(minutesApart <= 0) {
-								document.getElementById("minutesleft").innerText = "";
-								document.getElementById("minutesleft").textContent = "";
+							if(type == "normalPeriod")
+							{
+								if(minutesApart <= 0) {
+									document.getElementById("minutesleft").innerText = "";
+									document.getElementById("minutesleft").textContent = "";
+								}
+								else if(minutesApart == 1) {
+									document.getElementById("minutesleft").innerText = minutesApart + " " + "minute until period ends";
+									document.getElementById("minutesleft").textContent = minutesApart + " " + "minute until period ends";
+								}
+								else {
+									document.getElementById("minutesleft").innerText = minutesApart + " " + "minutes until period ends";
+									document.getElementById("minutesleft").textContent = minutesApart + " " + "minutes until period ends";
+								}
 							}
-							else if(minutesApart == 1) {
-								document.getElementById("minutesleft").innerText = minutesApart + " " + "minute until period ends";
-								document.getElementById("minutesleft").textContent = minutesApart + " " + "minute until period ends";
-							}
-							else {
-								document.getElementById("minutesleft").innerText = minutesApart + " " + "minutes until period ends";
-								document.getElementById("minutesleft").textContent = minutesApart + " " + "minutes until period ends";
-							}
+							
+
 						}
 
 						mHours = objToday.getHours();
