@@ -130,12 +130,12 @@
 
 						setTimeout(showTime, 1000);
 
-						if(dayOfWeek == "Saturday" || dayOfWeek == "Sunday") {
+						if(dayOfWeek == "Monday" || dayOfWeek == "Sunday") {
 							document.getElementById("period").innerText = "No School";
 							document.getElementById("period").textContent = "No School";
 							document.getElementById("minutesleft").innerText = "enjoy your weekend :)";
 						}
-						else if(dayOfWeek == "Monday" || dayOfWeek == "Friday") {
+						else if(dayOfWeek == "Saturday" || dayOfWeek == "Friday") {
 							if(time >= "8:5.0" && time <= "8:55.0") {
 								document.getElementById("period").innerText = "Period 1";
 								document.getElementById("period").textContent = "Period 1";
