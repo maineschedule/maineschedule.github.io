@@ -42,6 +42,15 @@
 				font-size: 95%;
 				white-space: nowrap;
 			}
+
+			.untilstart{
+				position: absolute;
+				top: 44%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				font-size: 95%;
+				white-space: nowrap;
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -51,6 +60,7 @@
 				<div id="date" class="date"></div>
 				<div id="period" class="period"></div>
 				<div id="minutesleft" class="minutesleft"></div>
+				<div id="untilstart" class="untilstart"></div>
 				<script type="text/javascript">
 
 					function showTime(){
@@ -72,7 +82,7 @@
 						m = m < 10 ? "0" + m : m;
 						s = s < 10 ? "0" + s : s;
 
-						function timeLeft(endHour, endMinute, periodName, endTime) {
+						function timeLeft(endHour, endMinute, periodName, endTime, type) {
 
 							var dateEndTime = new Date(1000, 0, 1, endHour, endMinute);
 							var dateRightNow = new Date();
@@ -80,6 +90,8 @@
 
 							timeDiff = dateEndTime - dateRightNow;
 							minutesApart = Math.floor((timeDiff/1000)/60);
+
+							if(type == "untilEnd") {
 
 								if(minutesApart <= 0) {
 									document.getElementById("minutesleft").innerText = "";
@@ -93,6 +105,8 @@
 									document.getElementById("minutesleft").innerText = minutesApart + " " + "minutes until " + periodName + " " + "ends " + "(" + endTime + ")";
 									document.getElementById("minutesleft").textContent = minutesApart + " " + "minutes until " + periodName + " " + "ends " + "(" + endTime + ")";
 								}
+
+							}
 
 						}
 
@@ -121,79 +135,79 @@
 							if(time >= "8:05.00" && time < "8:55.00") {
 								document.getElementById("period").innerText = "Period 1";
 								document.getElementById("period").textContent = "Period 1";
-								timeLeft(8, 56, "Period 1", "8:55 AM");
+								timeLeft(8, 56, "Period 1", "8:55 AM", "untilEnd");
 							}
 							else if(time >= "9:00.00" && time < "9:50.00") {
 								document.getElementById("period").innerText = "Period 2";
 								document.getElementById("period").textContent = "Period 2";
-								timeLeft(9, 51, "Period 2", "9:50 AM");
+								timeLeft(9, 51, "Period 2", "9:50 AM", "untilEnd");
 							}
 							else if(time >= "10:50.00" && time < "11:12.00") {
 								document.getElementById("period").innerText = "Period 4A";
 								document.getElementById("period").textContent = "Period 4A";
-								timeLeft(11, 13, "4A", "11:12 AM");
+								timeLeft(11, 13, "4A", "11:12 AM", "untilEnd");
 							}
 							else if(time >= "11:17.00" && time < "11:40.00") {
 								document.getElementById("period").innerText = "Period 4B";
 								document.getElementById("period").textContent = "Period 4B";
-								timeLeft(11, 41, "4B", "11:40 AM");
+								timeLeft(11, 41, "4B", "11:40 AM", "untilEnd");
 							}
 							else if(time >= "11:45.00" && time < "12:07.00") {
 								document.getElementById("period").innerText = "Period 5A";
 								document.getElementById("period").textContent = "Period 5A";
-								timeLeft(12, 8, "5A", "12:07 PM");
+								timeLeft(12, 8, "5A", "12:07 PM", "untilEnd");
 							}
 							else if(time >= "12:12.00" && time < "12:35.00") {
 								document.getElementById("period").innerText = "Period 5B";
 								document.getElementById("period").textContent = "Period 5B";
-								timeLeft(12, 36, "5B", "12:35 PM");
+								timeLeft(12, 36, "5B", "12:35 PM", "untilEnd");
 							}
 							else if(time >= "12:40.00" && time < "13:02.00") {
 								document.getElementById("period").innerText = "Period 6A";
 								document.getElementById("period").textContent = "Period 6A";
-								timeLeft(13, 3, "6A", "1:02 PM");
+								timeLeft(13, 3, "6A", "1:02 PM", "untilEnd");
 							}
 							else if(time >= "13:07.00" && time < "13:30.00") {
 								document.getElementById("period").innerText = "Period 6B";
 								document.getElementById("period").textContent = "Period 6B";
-								timeLeft(13, 31, "6B", "1:30 PM");
+								timeLeft(13, 31, "6B", "1:30 PM", "untilEnd");
 							}
 							else if(time >= "13:35.00" && time < "14:25.00") {
 								document.getElementById("period").innerText = "Period 7";
 								document.getElementById("period").textContent = "Period 7";
-								timeLeft(14, 26, "Period 7", "2:25 PM");
+								timeLeft(14, 26, "Period 7", "2:25 PM", "untilEnd");
 							}
 							else if(time >= "14:30.00" && time < "15:20.00") {
 								document.getElementById("period").innerText = "Period 8";
 								document.getElementById("period").textContent = "Period 8";
-								timeLeft(15, 21, "Period 8", "3:20 PM");
+								timeLeft(15, 21, "Period 8", "3:20 PM", "untilEnd");
 							}
 							else {
 								document.getElementById("period").innerText = "No School";
 								document.getElementById("period").textContent = "No School";
-								document.getElementById("minutesleft").innerText = "Enjoy Your Day";
+								document.getElementById("minutesleft").innerText = "Enjoy the rest of your day :)";
 							}
 						}
 						else if(dayOfWeek == "Tuesday") {
 							if(time >= "8:50.00" && time <= "9:35.00") {
 								document.getElementById("period").innerText = "Period 1";
 								document.getElementById("period").textContent = "Period 1";
-								timeLeft(9, 36, "normalPeriod", "9:35 AM");
+								timeLeft(9, 36, "normalPeriod", "9:35 AM", "untilEnd");
 							}
 							else if(time >= "9:40.00" && time <= "11:10.00") {
 								document.getElementById("period").innerText = "Period 3";
 								document.getElementById("period").textContent = "Period 3";
-								timeLeft(11, 11, "normalPeriod", "11:10 AM");
+								timeLeft(11, 11, "normalPeriod", "11:10 AM", "untilEnd");
 							}
 							else if(time >= "11:20.00" && time <= "13.40:00") {
 								document.getElementById("period").innerText = "Period 5";
 								document.getElementById("period").textContent = "Period 5";
-								timeLeft(13, 41, "normalPeriod", "1:40 PM");
+								timeLeft(13, 41, "normalPeriod", "1:40 PM", "untilEnd");
 							}
 							else if(time >= "13:50.00" && time < "15:20.00") {
 								document.getElementById("period").innerText = "Period 7";
 								document.getElementById("period").textContent = "Period 7";
-								timeLeft(15, 21, "normalPeriod", "3:20 PM");
+								timeLeft(15, 21, "normalPeriod", "3:20 PM", "untilEnd");
 							}
 							else if(time >= "15:20.00") {
 								document.getElementById("period").innerText = "No School";
@@ -210,22 +224,22 @@
 							if(time >= "8:5.0" && time <= "9:35.0") {
 								document.getElementById("period").innerText = "Period 2";
 								document.getElementById("period").textContent = "Period 2";
-								timeLeft(9, 36, "normalPeriod", "9:35 AM");
+								timeLeft(9, 36, "normalPeriod", "9:35 AM", "untilEnd");
 							}
 							else if(time >= "9:40.0" && time <= "11:10.0") {
 								document.getElementById("period").innerText = "Period 4";
 								document.getElementById("period").textContent = "Period 4";
-								timeLeft(11, 11, "normalPeriod", "11:10 AM");
+								timeLeft(11, 11, "normalPeriod", "11:10 AM", "untilEnd");
 							}
 							else if(time >= "11:20.0" && time <= "13.40:0") {
 								document.getElementById("period").innerText = "Period 6";
 								document.getElementById("period").textContent = "Period 6";
-								timeLeft(13, 41, "normalPeriod", "1:40 PM");
+								timeLeft(13, 41, "normalPeriod", "1:40 PM", "untilEnd");
 							}
 							else if(time >= "13:50.0" && time < "15:20.0") {
 								document.getElementById("period").innerText = "Period 8";
 								document.getElementById("period").textContent = "Period 8";
-								timeLeft(15, 21, "normalPeriod", "3:20 PM");
+								timeLeft(15, 21, "normalPeriod", "3:20 PM", "untilEnd");
 							}
 							else if(time >= "15:20.0") {
 								document.getElementById("period").innerText = "No School";
@@ -243,17 +257,17 @@
 							if(time >= "8:45.0" && time <= "9:30.0") {
 								document.getElementById("period").innerText = "Period 1";
 								document.getElementById("period").textContent = "Period 1";
-								timeLeft(9, 31, "normalPeriod", "9:30 AM");
+								timeLeft(9, 31, "normalPeriod", "9:30 AM", "untilEnd");
 							}
 							else if(time >= "9:35.0" && time <= "10:20.0") {
 								document.getElementById("period").innerText = "Period 2";
 								document.getElementById("period").textContent = "Period 2";
-								timeLeft(10, 21, "normalPeriod", "10:20 AM");
+								timeLeft(10, 21, "normalPeriod", "10:20 AM", "untilEnd");
 							}
 							else if(time >= "10:25.0" && time <= "11:10.0") {
 								document.getElementById("period").innerText = "Period 3";
 								document.getElementById("period").textContent = "Period 3";
-								timeLeft(11, 11, "normalPeriod", "11:10 AM");
+								timeLeft(11, 11, "normalPeriod", "11:10 AM", "untilEnd");
 
 								document.getElementById("minutesleft").innerText = "3A: " + timeLeft(10, 46);
 								if(time >= "10:50.0" && time <= "11:10.0") {
@@ -263,7 +277,7 @@
 							else if(time >= "11:15.0" && time <= "12:0.0") {
 								document.getElementById("period").innerText = "Period 4";
 								document.getElementById("period").textContent = "Period 4";
-								timeLeft(12, 1, "normalPeriod", "12:00 PM");
+								timeLeft(12, 1, "normalPeriod", "12:00 PM", "untilEnd");
 
 								document.getElementById("minutesleft").innerText = "4A: " + timeLeft(11, 36);
 								if(time >= "11:40.0" && time <= "12:0.0") {
@@ -273,7 +287,7 @@
 							else if(time >= "12:5.0" && time <= "12:50.0") {
 								document.getElementById("period").innerText = "Period 5";
 								document.getElementById("period").textContent = "Period 5";
-								timeLeft(12, 51, "normalPeriod", "12:50 PM");
+								timeLeft(12, 51, "normalPeriod", "12:50 PM", "untilEnd");
 
 								document.getElementById("minutesleft").innerText = "5A: " + timeLeft(12, 26);
 								if(time >= "12:30.0" && time <= "12:50.0") {
@@ -283,7 +297,7 @@
 							else if(time >= "12:55.0" && time <= "13:40.0") {
 								document.getElementById("period").innerText = "Period 6";
 								document.getElementById("period").textContent = "Period 6";
-								timeLeft(13, 41, "normalPeriod", "1:40 PM");
+								timeLeft(13, 41, "normalPeriod", "1:40 PM", "untilEnd");
 
 								document.getElementById("minutesleft").innerText = "6A: " + timeLeft(13, 16);
 								if(time >= "13:20.0" && time <= "13:40.0") {
@@ -293,12 +307,12 @@
 							else if(time >= "13:45.0" && time <= "14:30.0") {
 								document.getElementById("period").innerText = "Period 7";
 								document.getElementById("period").textContent = "Period 7";
-								timeLeft(14, 31, "normalPeriod", "2:30 PM");
+								timeLeft(14, 31, "normalPeriod", "2:30 PM", "untilEnd");
 							}
 							else if(time >= "14:35.0" && time < "15:20.0") {
 								document.getElementById("period").innerText = "Period 8";
 								document.getElementById("period").textContent = "Period 8";
-								timeLeft(15, 21, "normalPeriod", "3:20 PM");
+								timeLeft(15, 21, "normalPeriod", "3:20 PM", "untilEnd");
 							}
 							else if(time >= "15:20.0") {
 								document.getElementById("period").innerText = "No School";
