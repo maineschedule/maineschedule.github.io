@@ -186,6 +186,10 @@
 								document.getElementById("period").textContent = "Period 8";
 								timeLeft(15, 21, "normalPeriod");
 							}
+							else {
+								document.getElementById("period").innerText = "Passing Period";
+								document.getElementById("period").textContent = "Passing Period";
+							}
 						}
 						else if(dayOfWeek == "Tuesday") {
 							if(time >= "8:50.00" && time <= "9:35.00") {
