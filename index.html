@@ -96,6 +96,9 @@
 								if(minutesApart <= 0) {
 									document.getElementById("minutesleft").innerText = "";
 									document.getElementById("minutesleft").textContent = "";
+									// change test below
+									document.getElementById("untilstart").innerText = "";
+									document.getElementById("untilstart").textContent = "";
 								}
 								else if(minutesApart == 1) {
 									document.getElementById("minutesleft").innerText = minutesApart + " " + "minute until " + periodName + " " + "ends " + "(" + endTime + ")";
@@ -112,6 +115,9 @@
 								if(minutesApart <= 0) {
 									document.getElementById("untilstart").innerText = "";
 									document.getElementById("untilstart").textContent = "";
+									// change test below
+									document.getElementById("minutesleft").innerText = "";
+									document.getElementById("minutesleft").textContent = "";
 								}
 								else if(minutesApart == 1) {
 									document.getElementById("untilstart").innerText = minutesApart + " " + "minute until " + periodName + " " + "starts " + "(" + endTime + ")";
