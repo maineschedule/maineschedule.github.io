@@ -23,16 +23,29 @@
 		});
 
 	// Slideshow Background.
+
 		(function() {
 
 			// Settings.
-				var settings = {
+
+			var settings = {
 
 					// Images (in the format of 'url': 'alignment').
-						images: {
+
+						images1: {
 							'images/bg01.jpg': 'center',
 							'images/bg02.jpg': 'center',
 							'images/bg03.jpg': 'center'
+						},
+						images2: {
+							'images/bg02.jpg': 'center',
+							'images/bg01.jpg': 'center',
+							'images/bg03.jpg': 'center'
+						},
+						images3: {
+							'images/bg03.jpg': 'center',
+							'images/bg02.jpg': 'center',
+							'images/bg01.jpg': 'center'
 						},
 
 					// Delay.
@@ -40,7 +53,9 @@
 
 				};
 
-			// Vars.
+            var num = Math.floor(Math.random() * 3) + 1;
+            if(num == 1) {
+                // Vars.
 				var	pos = 0, lastPos = 0,
 					$wrapper, $bgs = [], $bg,
 					k, v;
@@ -50,18 +65,65 @@
 					$wrapper.id = 'bg';
 					$body.appendChild($wrapper);
 
-				for (k in settings.images) {
+				for (k in settings.images1) {
 
 					// Create BG.
 						$bg = document.createElement('div');
 							$bg.style.backgroundImage = 'url("' + k + '")';
-							$bg.style.backgroundPosition = settings.images[k];
+							$bg.style.backgroundPosition = settings.images1[k];
 							$wrapper.appendChild($bg);
 
 					// Add it to array.
 						$bgs.push($bg);
+                }
+            }
+            else if(num == 2) {
+                // Vars.
+				var	pos = 0, lastPos = 0,
+					$wrapper, $bgs = [], $bg,
+					k, v;
 
-				}
+			// Create BG wrapper, BGs.
+				$wrapper = document.createElement('div');
+					$wrapper.id = 'bg';
+					$body.appendChild($wrapper);
+
+				for (k in settings.images2) {
+
+					// Create BG.
+						$bg = document.createElement('div');
+							$bg.style.backgroundImage = 'url("' + k + '")';
+							$bg.style.backgroundPosition = settings.images2[k];
+							$wrapper.appendChild($bg);
+
+					// Add it to array.
+						$bgs.push($bg);
+                }
+            }
+            else {
+                // Vars.
+				var	pos = 0, lastPos = 0,
+					$wrapper, $bgs = [], $bg,
+					k, v;
+
+			// Create BG wrapper, BGs.
+				$wrapper = document.createElement('div');
+					$wrapper.id = 'bg';
+					$body.appendChild($wrapper);
+
+				for (k in settings.images3) {
+
+					// Create BG.
+						$bg = document.createElement('div');
+							$bg.style.backgroundImage = 'url("' + k + '")';
+							$bg.style.backgroundPosition = settings.images3[k];
+							$wrapper.appendChild($bg);
+
+					// Add it to array.
+						$bgs.push($bg);
+                }
+            }
+
 
 			// Main loop.
 				$bgs[pos].classList.add('visible');
