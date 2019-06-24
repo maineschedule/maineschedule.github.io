@@ -245,6 +245,9 @@ function showTime(){
 	document.getElementById("date").textContent = displayTime;
 
 	setTimeout(showTime, 1000);
+	
+	// Schedule according to 2019-2020 School Year
+	// Support for major holidays and winter/spring break will be added soon
 
 	if(dayOfWeek == "Saturday" || dayOfWeek == "Sunday") {
 		document.getElementById("period").innerText = "No School";
