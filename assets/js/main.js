@@ -256,15 +256,16 @@ function showTime(){
 	}
 	else if(dayOfWeek == "Monday" || dayOfWeek == "Tuesday" || dayOfWeek == "Friday") {
 		if(time >= "7:30.00" && time < "8:15.00") {
+			var name;
 			if(dayOfWeek == "Monday") {
-				document.getElementById("period").innerText = "Staff Learning Hours";
-				document.getElementById("period").textContent = "Staff Learning Hours";
+				name = "Staff Learning Hours";
 			}
 			else {
-				document.getElementById("period").innerText = "Office Hours";
-				document.getElementById("period").textContent = "Office Hours";	
+				name = "Office Hours";
 			}
-			timeLeft(8, 16, "Staff Learning Hours", "8:15 AM", "untilEnd");
+			document.getElementById("period").innerText = name;
+			document.getElementById("period").textContent = name;	
+			timeLeft(8, 16, name, "8:15 AM", "untilEnd");
 			timeLeft(8, 21, "Period 1", "8:20 AM", "untilStart");	
 		}
 		else if(time >= "8:15.00" && time < "8:20.00") {
