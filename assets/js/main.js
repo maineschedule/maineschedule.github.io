@@ -288,6 +288,7 @@ function showTime(){
 			document.getElementById("minutesleft").innerText = "";
 			document.getElementById("minutesleft").textContent = "";
 		}
+		// bug here. will say "No School".
 		else if(time >= "9:13.00" && time < "10:01.00") {
 			document.getElementById("period").innerText = "Period 2";
 			document.getElementById("period").textContent = "Period 2";
@@ -297,7 +298,7 @@ function showTime(){
 		else if(time >= "10:01.00" && time < "10:06.00") {
 			document.getElementById("period").innerText = "Passing Period";
 			document.getElementById("period").textContent = "Passing Period";
-			timeLeft(10, 7, "Period 3", "9:55 AM", "untilStart");
+			timeLeft(10, 7, "Period 3", "10:06 AM", "untilStart");
 			document.getElementById("minutesleft").innerText = "";
 			document.getElementById("minutesleft").textContent = "";
 		}
