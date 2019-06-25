@@ -244,7 +244,9 @@ function showTime(){
 	document.getElementById("date").innerText = displayTime;
 	document.getElementById("date").textContent = displayTime;
 
-	setTimeout(showTime, 1000);
+	// May change to setTimeout(showTime, 1000); or setInterval(showTime, 1000); 
+	// Question is, how precise must my timing be?
+	setInterval(showTime, 1000);
 	
 	// Schedule according to 2019-2020 School Year
 	// Support for major holidays and winter/spring break will be added soon
