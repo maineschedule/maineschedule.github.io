@@ -260,7 +260,7 @@ function showTime(){
 				document.getElementById("period").innerText = "Staff Learning Hours";
 				document.getElementById("period").textContent = "Staff Learning Hours";
 			}
-			else if(dayOfWeek == "Tuesday" || dayOfWeek == "Friday") {
+			else {
 				document.getElementById("period").innerText = "Office Hours";
 				document.getElementById("period").textContent = "Office Hours";	
 			}
