@@ -450,7 +450,7 @@ function showTime(){
 			document.getElementById("period").textContent = "Office Hours";
 			timeLeft(15, 31, "Office Hours", "3:30 PM", "untilEnd");
 		}
-		else if(time >= "15:30.00" && time < "7:30.00"){
+		else {
 			document.getElementById("period").innerText = "No School";
 			document.getElementById("period").textContent = "No School";
 			document.getElementById("minutesleft").innerText = "Enjoy the rest of your day :)";
