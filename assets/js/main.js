@@ -257,7 +257,7 @@ function showTime(){
 		document.getElementById("minutesleft").innerText = "Enjoy your weekend ^-^";
 	}
 	else if(dayOfWeek == "Monday" || dayOfWeek == "Tuesday" || dayOfWeek == "Friday") {
-		if(time >= "7:30.00" && time < "8:15.00") {
+		if(time >= "07:30.00" && time < "08:15.00") {
 			var name;
 			if(dayOfWeek == "Monday") {
 				name = "Staff Learning Hours";
@@ -270,28 +270,27 @@ function showTime(){
 			timeLeft(8, 16, name, "8:15 AM", "untilEnd");
 			timeLeft(8, 21, "Period 1", "8:20 AM", "untilStart");	
 		}
-		else if(time >= "8:15.00" && time < "8:20.00") {
+		else if(time >= "08:15.00" && time < "08:20.00") {
 			document.getElementById("period").innerText = "Passing Period";
 			document.getElementById("period").textContent = "Passing Period";
 			timeLeft(8, 21, "Period 1", "8:20 AM", "untilStart");
 			document.getElementById("minutesleft").innerText = "";
 			document.getElementById("minutesleft").textContent = "";
 		}
-		else if(time >= "8:20.00" && time < "9:08.00") {
+		else if(time >= "08:20.00" && time < "09:08.00") {
 			document.getElementById("period").innerText = "Period 1";
 			document.getElementById("period").textContent = "Period 1";
 			timeLeft(9, 9, "Period 1", "9:08 AM", "untilEnd");
 			timeLeft(9, 14, "Period 2", "9:13 AM", "untilStart");
 		}
-		else if(time >= "9:08.00" && time < "9:13.00") {
+		else if(time >= "09:08.00" && time < "09:13.00") {
 			document.getElementById("period").innerText = "Passing Period";
 			document.getElementById("period").textContent = "Passing Period";
 			timeLeft(9, 14, "Period 2", "9:13 AM", "untilStart");
 			document.getElementById("minutesleft").innerText = "";
 			document.getElementById("minutesleft").textContent = "";
 		}
-		// bug here. will say "No School".
-		else if(time >= "9:13.00" && time < "10:01.00") {
+		else if(time >= "09:13.00" && time < "10:01.00") {
 			document.getElementById("period").innerText = "Period 2";
 			document.getElementById("period").textContent = "Period 2";
 			timeLeft(10, 2, "Period 2", "10:01 AM", "untilEnd");
@@ -458,34 +457,34 @@ function showTime(){
 		}
 	}
 	else {
-		if(time >= "7:30.00" && time < "8:15.00") {
+		if(time >= "07:30.00" && time < "08:15.00") {
 			// Staff Meeting 2nd Thursday of every month
 			document.getElementById("period").innerText = "Office Hours";
 			document.getElementById("period").textContent = "Office Hours";
 			timeLeft(8, 16, "Profressional Development", "8:15 AM", "untilEnd");
 			timeLeft(8, 21, "Period 4", "8:20 AM", "untilStart");
 		}
-		else if(time >= "8:15.00" && time < "8:20.00") {
+		else if(time >= "08:15.00" && time < "08:20.00") {
 			document.getElementById("period").innerText = "Passing Period";
 			document.getElementById("period").textContent = "Passing Period";
 			timeLeft(8, 21, "Period 4", "8:20 AM", "untilStart");
 			document.getElementById("minutesleft").innerText = "";
 			document.getElementById("minutesleft").textContent = "";
 		}
-		else if(time >= "8:20.00" && time < "9:48.00") {
+		else if(time >= "08:20.00" && time < "09:48.00") {
 			document.getElementById("period").innerText = "Period 4";
 			document.getElementById("period").textContent = "Period 4";
 			timeLeft(9, 49, "Period 4", "9:48 AM", "untilEnd");
 			timeLeft(9, 54, "Period 2", "9:53 AM", "untilStart");
 		}
-		else if(time >= "9:48.00" && time < "9:53.00") {
+		else if(time >= "09:48.00" && time < "09:53.00") {
 			document.getElementById("period").innerText = "Passing Period";
 			document.getElementById("period").textContent = "Passing Period";
 			timeLeft(9, 54, "Period 2", "9:53 AM", "untilStart");
 			document.getElementById("minutesleft").innerText = "";
 			document.getElementById("minutesleft").textContent = "";
 		}
-		else if(time >= "9:53.00" && time < "11:25.00") {
+		else if(time >= "09:53.00" && time < "11:25.00") {
 			document.getElementById("period").innerText = "Period 2";
 			document.getElementById("period").textContent = "Period 2";
 			timeLeft(11, 26, "Period 2", "11:25 AM", "untilEnd");
