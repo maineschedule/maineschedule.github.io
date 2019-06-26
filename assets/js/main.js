@@ -428,13 +428,13 @@ function showTime(){
 		else if(time >= "11:30.00" && time < "13:46.00") {
 			document.getElementById("period").innerText = "Period 7";
 			document.getElementById("period").textContent = "Period 7";
-			timeLeft(13, 47, "Period 7", "13:46 PM", "untilEnd");
-			timeLeft(13, 52, "Period 5", "13:51 PM", "untilStart");
+			timeLeft(13, 47, "Period 7", "1:46 PM", "untilEnd");
+			timeLeft(13, 52, "Period 5", "1:51 PM", "untilStart");
 		}
 		else if(time >= "13:46.00" && time < "13:51.00") {
 			document.getElementById("period").innerText = "Passing Period";
 			document.getElementById("period").textContent = "Passing Period";
-			timeLeft(11, 28, "Period 5", "1:51 PM", "untilStart");
+			timeLeft(13, 52, "Period 5", "1:51 PM", "untilStart");
 			document.getElementById("minutesleft").innerText = "";
 			document.getElementById("minutesleft").textContent = "";
 		}
