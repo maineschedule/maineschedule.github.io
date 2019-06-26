@@ -454,6 +454,7 @@ function showTime(){
 			document.getElementById("period").innerText = "No School";
 			document.getElementById("period").textContent = "No School";
 			document.getElementById("minutesleft").innerText = "Enjoy the rest of your day :)";
+			console.log(time);
 		}
 	}
 	else {
