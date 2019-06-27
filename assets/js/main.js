@@ -235,6 +235,9 @@ function showTime(){
 	mSeconds = objToday.getSeconds();
 
 	var mHours = objToday.getHours();
+	if(mHours < 10) {
+		mHours = "0" + mHours;	
+	}
 	var time = mHours + ":" + m + "." + s;
 	var displayTime = h + ":" + m + "." + s + " " + session;
 	var today = dayOfWeek + "," + " " + curMonth + " " + dayOfMonth + "," + " " + curYear;
