@@ -53,6 +53,7 @@
 
 				};
 
+	    /*
             var num = Math.floor(Math.random() * 3) + 1;
             if(num == 1) {
                 // Vars.
@@ -100,7 +101,8 @@
 						$bgs.push($bg);
                 }
             }
-            else {
+	    */
+            //else {
                 // Vars.
 				var	pos = 0, lastPos = 0,
 					$wrapper, $bgs = [], $bg,
@@ -122,7 +124,7 @@
 					// Add it to array.
 						$bgs.push($bg);
                 }
-            }
+            //}
 
 
 			// Main loop.
