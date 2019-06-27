@@ -247,7 +247,7 @@ function showTime(){
 	//console.log(time);
 	
 	// change tab title to this format: "time : period"
-	document.title = time;
+	// document.title = time;
 
 	document.getElementById("clockDisp").innerText = today;
 	document.getElementById("clockDisp").textContent = today;
@@ -262,6 +262,8 @@ function showTime(){
 	// Schedule according to 2019-2020 School Year
 	// Support for major holidays and winter/spring break will be added soon
 
+	var period = "No School";
+	
 	if(dayOfWeek == "Saturday" || dayOfWeek == "Sunday") {
 		document.getElementById("period").innerText = "No School";
 		document.getElementById("period").textContent = "No School";
@@ -538,6 +540,8 @@ function showTime(){
 			document.getElementById("minutesleft").innerText = "Enjoy the rest of your day :)";
 		}
 	}
+	// "var displayTime" is in 12hr format while "var time" is in 24hr format.
+	document.title = period + " | " + displayTime;
 }
 
 showTime();
