@@ -268,7 +268,7 @@ function showTime(){
 	
 	// log: make var greeting that changes based on holiday, special events, etc.
 	if(dayOfWeek == "Saturday" || dayOfWeek == "Sunday") {
-		document.getElementById("minutesleft").innerText = "Enjoy your weekend ^-^";
+		document.getElementById("minutesleft").innerText = "Enjoy your weekend :D";
 	}
 	else if(dayOfWeek == "Monday" || dayOfWeek == "Tuesday" || dayOfWeek == "Friday") {
 		if(time >= "07:30.00" && time < "08:15.00") {
@@ -374,7 +374,7 @@ function showTime(){
 			timeLeft(15, 31, curPeriod, "3:30 PM", "untilEnd");
 		}
 		else {
-			document.getElementById("minutesleft").innerText = "Enjoy the rest of your day ^-^";
+			document.getElementById("minutesleft").innerText = "Enjoy the rest of your day ^_^";
 		}
 	}
 	else if(dayOfWeek == "Wednesday") {
