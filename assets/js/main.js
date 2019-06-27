@@ -238,6 +238,8 @@ function showTime(){
 	var time = mHours + ":" + m + "." + s;
 	var displayTime = h + ":" + m + "." + s + " " + session;
 	var today = dayOfWeek + "," + " " + curMonth + " " + dayOfMonth + "," + " " + curYear;
+	
+	console.log(time);
 
 	document.getElementById("clockDisp").innerText = today;
 	document.getElementById("clockDisp").textContent = today;
