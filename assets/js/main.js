@@ -507,8 +507,8 @@ function showTime(){
 		else if(time >= "11:30.00" && time < "13:46.00") {
 			document.getElementById("period").innerText = "Period 8";
 			document.getElementById("period").textContent = "Period 8";
-			timeLeft(13, 47, "Period 8", "13:46 PM", "untilEnd");
-			timeLeft(13, 52, "Period 6", "13:51 PM", "untilStart");
+			timeLeft(13, 47, "Period 8", "1:46 PM", "untilEnd");
+			timeLeft(13, 52, "Period 6", "1:51 PM", "untilStart");
 		}
 		else if(time >= "13:46.00" && time < "13:51.00") {
 			document.getElementById("period").innerText = "Passing Period";
