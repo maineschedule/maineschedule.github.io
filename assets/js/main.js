@@ -541,7 +541,7 @@ function showTime(){
 		}
 	}
 	// "var displayTime" is in 12hr format while "var time" is in 24hr format.
-	document.title = period + " | " + displayTime;
+	document.title = curPeriod + " | " + displayTime;
 }
 
 showTime();
