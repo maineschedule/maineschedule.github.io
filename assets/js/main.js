@@ -385,7 +385,7 @@ function showTime(){
 			document.getElementById("minutesleft").innerText = "Enjoy the rest of your day ^-^";
 		}
 	}
-	else if(dayOfWeek == "Thursday") {
+	else if(dayOfWeek == "Wednesday") {
 		if(time >= "07:30.00" && time < "08:15.00") {
 			document.getElementById("period").innerText = "Profressional Development";
 			document.getElementById("period").textContent = "Profressional Development";
@@ -456,7 +456,7 @@ function showTime(){
 			console.log(time);
 		}
 	}
-	else if(dayOfWeek == "Wednesday") {
+	else if(dayOfWeek == "Thursday") {
 		if(time >= "07:30.00" && time < "08:15.00") {
 			// Staff Meeting 2nd Thursday of every month
 			document.getElementById("period").innerText = "Office Hours";
