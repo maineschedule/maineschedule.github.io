@@ -245,6 +245,9 @@ function showTime(){
 	var today = dayOfWeek + "," + " " + curMonth + " " + dayOfMonth + "," + " " + curYear;
 	
 	//console.log(time);
+	
+	// change tab title to this format: "time : period"
+	document.title = time;
 
 	document.getElementById("clockDisp").innerText = today;
 	document.getElementById("clockDisp").textContent = today;
