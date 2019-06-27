@@ -456,7 +456,7 @@ function showTime(){
 			console.log(time);
 		}
 	}
-	else {
+	else if(dayOfWeek == "Thursday") {
 		if(time >= "07:30.00" && time < "08:15.00") {
 			// Staff Meeting 2nd Thursday of every month
 			document.getElementById("period").innerText = "Office Hours";
