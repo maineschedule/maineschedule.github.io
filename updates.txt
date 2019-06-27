@@ -1,1 +1,9 @@
-
+Future ideas:
+  Priority:
+    1. Integrate signing in using school gmail account (s207 organization) which will allow for custom backgrounds 
+       and self-made schedulues.
+    2. Holidays, special events (food drives, assembly, etc).
+    3. Winter, spring, summer breaks.
+    4. Summer school schedule.
+    5. Integration with Maine East and Maine West High School.
+    6. Make tab title update dynamically with period and time.
