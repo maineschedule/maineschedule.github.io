@@ -262,25 +262,25 @@ function showTime(){
 	// Schedule according to 2019-2020 School Year
 	// Support for major holidays and winter/spring break will be added soon
 
-	var period = "No School";
+	var curPeriod = "No School";
 	
+	// log: make var greeting that changes based on holiday, special events, etc.
 	if(dayOfWeek == "Saturday" || dayOfWeek == "Sunday") {
-		document.getElementById("period").innerText = "No School";
-		document.getElementById("period").textContent = "No School";
+		document.getElementById("period").innerText = curPeriod;
+		document.getElementById("period").textContent = curPeriod;
 		document.getElementById("minutesleft").innerText = "Enjoy your weekend ^-^";
 	}
 	else if(dayOfWeek == "Monday" || dayOfWeek == "Tuesday" || dayOfWeek == "Friday") {
 		if(time >= "07:30.00" && time < "08:15.00") {
-			var name;
 			if(dayOfWeek == "Monday") {
-				name = "Staff Learning Hours";
+				curPeriod = "Staff Learning Hours";
 			}
 			else {
-				name = "Office Hours";
+				curPeriod = "Office Hours";
 			}
-			document.getElementById("period").innerText = name;
-			document.getElementById("period").textContent = name;	
-			timeLeft(8, 16, name, "8:15 AM", "untilEnd");
+			document.getElementById("period").innerText = curPeriod;
+			document.getElementById("period").textContent = curPeriod;	
+			timeLeft(8, 16, curPeriod, "8:15 AM", "untilEnd");
 			timeLeft(8, 21, "Period 1", "8:20 AM", "untilStart");	
 		}
 		else if(time >= "08:15.00" && time < "08:20.00") {
