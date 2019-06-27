@@ -235,6 +235,8 @@ function showTime(){
 	mSeconds = objToday.getSeconds();
 
 	var mHours = objToday.getHours();
+	// if using 24 hour format, we can compare two times as strings. 
+	// However, if the hours is only one digit, we must add 0 in front.
 	if(mHours < 10) {
 		mHours = "0" + mHours;	
 	}
@@ -242,7 +244,7 @@ function showTime(){
 	var displayTime = h + ":" + m + "." + s + " " + session;
 	var today = dayOfWeek + "," + " " + curMonth + " " + dayOfMonth + "," + " " + curYear;
 	
-	console.log(time);
+	//console.log(time);
 
 	document.getElementById("clockDisp").innerText = today;
 	document.getElementById("clockDisp").textContent = today;
