@@ -268,8 +268,6 @@ function showTime(){
 	
 	// log: make var greeting that changes based on holiday, special events, etc.
 	if(dayOfWeek == "Saturday" || dayOfWeek == "Sunday") {
-		document.getElementById("period").innerText = curPeriod;
-		document.getElementById("period").textContent = curPeriod;
 		document.getElementById("minutesleft").innerText = "Enjoy your weekend ^-^";
 	}
 	else if(dayOfWeek == "Monday" || dayOfWeek == "Tuesday" || dayOfWeek == "Friday") {
@@ -279,124 +277,103 @@ function showTime(){
 			}
 			else {
 				curPeriod = "Office Hours";
-			}
-			document.getElementById("period").innerText = curPeriod;
-			document.getElementById("period").textContent = curPeriod;	
+			}	
 			timeLeft(8, 16, curPeriod, "8:15 AM", "untilEnd");
 			timeLeft(8, 21, "Period 1", "8:20 AM", "untilStart");	
 		}
 		else if(time >= "08:15.00" && time < "08:20.00") {
-			document.getElementById("period").innerText = "Passing Period";
-			document.getElementById("period").textContent = "Passing Period";
+			curPeriod = "Passing Period";
 			timeLeft(8, 21, "Period 1", "8:20 AM", "untilStart");
 			document.getElementById("minutesleft").innerText = "";
 			document.getElementById("minutesleft").textContent = "";
 		}
 		else if(time >= "08:20.00" && time < "09:08.00") {
-			document.getElementById("period").innerText = "Period 1";
-			document.getElementById("period").textContent = "Period 1";
-			timeLeft(9, 9, "Period 1", "9:08 AM", "untilEnd");
+			curPeriod = "Period 1";
+			timeLeft(9, 9, curPeriod, "9:08 AM", "untilEnd");
 			timeLeft(9, 14, "Period 2", "9:13 AM", "untilStart");
 		}
 		else if(time >= "09:08.00" && time < "09:13.00") {
-			document.getElementById("period").innerText = "Passing Period";
-			document.getElementById("period").textContent = "Passing Period";
+			curPeriod = "Passing Period";
 			timeLeft(9, 14, "Period 2", "9:13 AM", "untilStart");
 			document.getElementById("minutesleft").innerText = "";
 			document.getElementById("minutesleft").textContent = "";
 		}
 		else if(time >= "09:13.00" && time < "10:01.00") {
-			document.getElementById("period").innerText = "Period 2";
-			document.getElementById("period").textContent = "Period 2";
-			timeLeft(10, 2, "Period 2", "10:01 AM", "untilEnd");
+			curPeriod = "Period 2";
+			timeLeft(10, 2, curPeriod, "10:01 AM", "untilEnd");
 			timeLeft(10, 7, "Period 3", "10:06 AM", "untilStart");
 		}
 		else if(time >= "10:01.00" && time < "10:06.00") {
-			document.getElementById("period").innerText = "Passing Period";
-			document.getElementById("period").textContent = "Passing Period";
+			curPeriod = "Passing Period";
 			timeLeft(10, 7, "Period 3", "10:06 AM", "untilStart");
 			document.getElementById("minutesleft").innerText = "";
 			document.getElementById("minutesleft").textContent = "";
 		}
 		else if(time >= "10:06.00" && time < "10:54.00") {
-			document.getElementById("period").innerText = "Period 3";
-			document.getElementById("period").textContent = "Period 3";
-			timeLeft(10, 55, "Period 3", "10:54 AM", "untilEnd");
+			curPeriod = "Period 3";
+			timeLeft(10, 55, curPeriod, "10:54 AM", "untilEnd");
 			timeLeft(11, 0, "Period 4", "10:59 AM", "untilStart");
 		}
 		else if(time >= "10:54.00" && time < "10:59.00") {
-			document.getElementById("period").innerText = "Passing Period";
-			document.getElementById("period").textContent = "Passing Period";
+			curPeriod = "Passing Period";
 			timeLeft(11, 0, "Period 4", "10:59 AM", "untilStart");
 			document.getElementById("minutesleft").innerText = "";
 			document.getElementById("minutesleft").textContent = "";
 		}
 		else if(time >= "10:59.00" && time < "11:47.00") {
-			document.getElementById("period").innerText = "Period 4";
-			document.getElementById("period").textContent = "Period 4";
-			timeLeft(11, 48, "Period 4", "11:47 AM", "untilEnd");
+			curPeriod = "Period 4";
+			timeLeft(11, 48, curPeriod, "11:47 AM", "untilEnd");
 			timeLeft(11, 53, "Period 5", "11:52 AM", "untilStart");
 		}
 		else if(time >= "11:47.00" && time < "11:52.00") {
-			document.getElementById("period").innerText = "Passing Period";
-			document.getElementById("period").textContent = "Passing Period";
+			curPeriod = "Passing Period";
 			timeLeft(11, 53, "Period 5", "11:52 AM", "untilStart");
 			document.getElementById("minutesleft").innerText = "";
 			document.getElementById("minutesleft").textContent = "";
 		}
 		else if(time >= "11:52.00" && time < "12:40.00") {
-			document.getElementById("period").innerText = "Period 5";
-			document.getElementById("period").textContent = "Period 5";
-			timeLeft(12, 41, "Period 5", "12:40 PM", "untilEnd");
+			curPeriod = "Period 5";
+			timeLeft(12, 41, curPeriod, "12:40 PM", "untilEnd");
 			timeLeft(12, 46, "Period 6", "12:45 PM", "untilStart");
 		}
 		else if(time >= "12:40.00" && time < "12:45.00") {
-			document.getElementById("period").innerText = "Passing Period";
-			document.getElementById("period").textContent = "Passing Period";
+			curPeriod = "Passing Period";
 			timeLeft(12, 46, "Period 6", "12:45 PM", "untilStart");
 			document.getElementById("minutesleft").innerText = "";
 			document.getElementById("minutesleft").textContent = "";
 		}
 		else if(time >= "12:45.00" && time < "13:33.00") {
-			document.getElementById("period").innerText = "Period 6";
-			document.getElementById("period").textContent = "Period 6";
-			timeLeft(13, 34, "Period 6", "1:33 PM", "untilEnd");
+			curPeriod = "Period 6";
+			timeLeft(13, 34, curPeriod, "1:33 PM", "untilEnd");
 			timeLeft(13, 39, "Period 7", "1:38 PM", "untilStart");
 		}
 		else if(time >= "13:33.00" && time < "13:38.00") {
-			document.getElementById("period").innerText = "Passing Period";
-			document.getElementById("period").textContent = "Passing Period";
+			curPeriod = "Passing Period";
 			timeLeft(13, 39, "Period 7", "1:38 PM", "untilStart");
 			document.getElementById("minutesleft").innerText = "";
 			document.getElementById("minutesleft").textContent = "";
 		}
 		else if(time >= "13:38.00" && time < "14:26.00") {
-			document.getElementById("period").innerText = "Period 7";
-			document.getElementById("period").textContent = "Period 7";
-			timeLeft(14, 27, "Period 7", "2:26 PM", "untilEnd");
+			curPeriod = "Period 7";
+			timeLeft(14, 27, curPeriod, "2:26 PM", "untilEnd");
 			timeLeft(14, 32, "Period 8", "2:31 PM", "untilStart");
 		}
 		else if(time >= "14:26.00" && time < "14:31.00") {
-			document.getElementById("period").innerText = "Passing Period";
-			document.getElementById("period").textContent = "Passing Period";
+			curPeriod = "Passing Period";
 			timeLeft(14, 32, "Period 8", "2:31 PM", "untilStart");
 			document.getElementById("minutesleft").innerText = "";
 			document.getElementById("minutesleft").textContent = "";
 		}
 		else if(time >= "14:31.00" && time < "15:19.00") {
-			document.getElementById("period").innerText = "Period 8";
-			document.getElementById("period").textContent = "Period 8";
-			timeLeft(15, 20, "6B", "3:19 PM", "untilEnd");
+			curPeriod = "Period 8";
+			timeLeft(15, 20, curPeriod, "3:19 PM", "untilEnd");
 			timeLeft(15, 20, "Office Hours", "3:19 PM", "untilStart");
 		}
 		else if(time >= "15:19.00" && time < "15:30.00") {
-			document.getElementById("period").innerText = "Office Hours";
-			document.getElementById("period").textContent = "Office Hours";
-			timeLeft(15, 31, "Office Hours", "3:30 PM", "untilEnd");
+			curPeriod = "Office Hours";
+			timeLeft(15, 31, curPeriod, "3:30 PM", "untilEnd");
 		}
 		else {
-			document.getElementById("period").innerText = "No School";
-			document.getElementById("period").textContent = "No School";
 			document.getElementById("minutesleft").innerText = "Enjoy the rest of your day ^-^";
 		}
 	}
@@ -468,7 +445,6 @@ function showTime(){
 			document.getElementById("period").innerText = "No School";
 			document.getElementById("period").textContent = "No School";
 			document.getElementById("minutesleft").innerText = "Enjoy the rest of your day :)";
-			console.log(time);
 		}
 	}
 	else if(dayOfWeek == "Thursday") {
@@ -544,6 +520,8 @@ function showTime(){
 	}
 	// "var displayTime" is in 12hr format while "var time" is in 24hr format.
 	document.title = curPeriod + " | " + displayTime;
+	document.getElementById("period").innerText = curPeriod;
+	document.getElementById("period").textContent = curPeriod;
 }
 
 showTime();
