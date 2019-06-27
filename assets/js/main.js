@@ -253,7 +253,8 @@ function showTime(){
 
 	// May change to setTimeout(showTime, 1000); or setInterval(showTime, 1000); 
 	// Question is, how precise must my timing be?
-	setInterval(showTime, 1000);
+	//setInterval(showTime, 1000);
+	setTimeout(showTime, 1000);
 	
 	// Schedule according to 2019-2020 School Year
 	// Support for major holidays and winter/spring break will be added soon
