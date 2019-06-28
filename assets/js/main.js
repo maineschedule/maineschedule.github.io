@@ -367,7 +367,7 @@ function showTime(){
 		else if(time >= "14:31.00" && time < "15:19.00") {
 			curPeriod = "Period 8";
 			timeLeft(15, 20, curPeriod, "3:19 PM", "untilEnd");
-			timeLeft(15, 20, "Office Hours", "3:19 PM", "untilStart");
+			timeLeft(15, 19, "Office Hours", "3:19 PM", "untilStart");
 		}
 		else if(time >= "15:19.00" && time < "15:30.00") {
 			curPeriod = "Office Hours";
@@ -429,7 +429,7 @@ function showTime(){
 			document.getElementById("period").innerText = curPeriod;
 			document.getElementById("period").textContent = curPeriod;
 			timeLeft(15, 20, curPeriod, "3:19 PM", "untilEnd");
-			timeLeft(15, 20, "Office Hours", "3:19 PM", "untilStart");
+			timeLeft(15, 19, "Office Hours", "3:19 PM", "untilStart");
 		}
 		else if(time >= "15:19.00" && time < "15:30.00") {
 			curPeriod = "Office Hours";
@@ -502,6 +502,7 @@ function showTime(){
 			timeLeft(15, 20, curPeriod, "3:19 PM", "untilEnd");
 			// originally was timeLeft(15, 20...). Original problem was that at 3:19:00PM,
 			// the untilStart code did not go away until 3:20:00pm.
+			// so far, all have been changed. change back to 15, 20 if not work.
 			timeLeft(15, 19, "Office Hours", "3:19 PM", "untilStart");
 		}
 		else if(time >= "15:19.00" && time < "15:30.00") {
