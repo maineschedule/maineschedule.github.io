@@ -251,8 +251,8 @@ function showTime(){
 	// change tab title to this format: "time : period"
 	// document.title = time;
 
-	document.getElementById("clockDisp").innerText = today;
-	document.getElementById("clockDisp").textContent = today;
+	document.getElementById("clock").innerText = today;
+	document.getElementById("clock").textContent = today;
 	document.getElementById("date").innerText = displayTime;
 	document.getElementById("date").textContent = displayTime;
 
