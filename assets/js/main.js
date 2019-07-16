@@ -245,7 +245,7 @@ function showTime(){
 	var time = mHours + ":" + m + "." + s;
 	var displayTime = h + ":" + m + "." + s + " " + session;
 	var today = dayOfWeek + "," + " " + curMonth + " " + dayOfMonth + "," + " " + curYear;
-	console.log(today);
+	//console.log(today);
 	//console.log(time);
 	
 	// change tab title to this format: "time : period"
