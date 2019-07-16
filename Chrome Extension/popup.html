@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Maine Schedule</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" href="images/icon.png">
+		<style type="text/css">
+			.clock{
+				position: absolute;
+				top: 65%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				font-size: 100%;
+				white-space: nowrap;
+			}
+
+			.date{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				font-size: 375%;
+				white-space: nowrap;
+			}
+
+			.period{
+				position: absolute;
+				top: 30%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				font-size: 175%;
+				white-space: nowrap;
+			}
+
+			.minutesleft{
+				position: absolute;
+				top: 70%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				font-size: 95%;
+				white-space: nowrap;
+			}
+
+			.untilstart{
+				position: absolute;
+				top: 75%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				font-size: 95%;
+				white-space: nowrap;
+			}
+
+			.credits{
+				position: absolute;
+				top: 90%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				font-size: 95%;
+				white-space: nowrap;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+        <div id="ClockDisplay" class="clock"></div>
+		<div id="date" class="date"></div>
+		<div id="period" class="period"></div>
+		<div id="minutesleft" class="minutesleft"></div>
+		<div id="untilstart" class="untilstart"></div>
+
+		<!-- Scripts -->
+        <script src="assets/js/main.js" defer></script>
+        <script src="assets/js/minutes.js" defer></script>
+
+	</body>
+</html>
