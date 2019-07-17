@@ -1,8 +1,12 @@
+/*
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
 (function() {
 
 	"use strict";
-
-	var	$body = document.querySelector('body');
 
 	// Methods/polyfills.
 
@@ -15,37 +19,29 @@
 		// window.addEventListener
 			(function(){if("addEventListener"in window)return;window.addEventListener=function(type,f){window.attachEvent("on"+type,f)}})();
 
-	// Play initial animations on page load.
+	// Vars.
+		var	$body = document.querySelector('body');
+
+	// Disable animations/transitions until everything's loaded.
+		$body.classList.add('is-loading');
+
 		window.addEventListener('load', function() {
 			window.setTimeout(function() {
-				$body.classList.remove('is-preload');
+				$body.classList.remove('is-loading');
 			}, 100);
 		});
 
 	// Slideshow Background.
-
 		(function() {
 
 			// Settings.
-
-			var settings = {
+				var settings = {
 
 					// Images (in the format of 'url': 'alignment').
-
-						images1: {
-							'images/bg01.jpg': 'center',
-							'images/bg02.jpg': 'center',
-							'images/bg03.jpg': 'center'
-						},
-						images2: {
-							'images/bg02.jpg': 'center',
-							'images/bg01.jpg': 'center',
-							'images/bg03.jpg': 'center'
-						},
-						images3: {
-							'images/bg03.jpg': 'center',
-							'images/bg02.jpg': 'center',
-							'images/bg01.jpg': 'center'
+						images: {
+							'assets/images/bg01.jpg': 'center',
+							'assets/images/bg02.jpg': 'center',
+							'assets/images/bg03.jpg': 'center'
 						},
 
 					// Delay.
@@ -53,10 +49,7 @@
 
 				};
 
-	    
-            var num = Math.floor(Math.random() * 3) + 1;
-            if(num == 1) {
-                // Vars.
+			// Vars.
 				var	pos = 0, lastPos = 0,
 					$wrapper, $bgs = [], $bg,
 					k, v;
@@ -66,66 +59,18 @@
 					$wrapper.id = 'bg';
 					$body.appendChild($wrapper);
 
-				for (k in settings.images1) {
+				for (k in settings.images) {
 
 					// Create BG.
 						$bg = document.createElement('div');
 							$bg.style.backgroundImage = 'url("' + k + '")';
-							$bg.style.backgroundPosition = settings.images1[k];
+							$bg.style.backgroundPosition = settings.images[k];
 							$wrapper.appendChild($bg);
 
 					// Add it to array.
 						$bgs.push($bg);
-                }
-            }
-            else if(num == 2) {
-                // Vars.
-				var	pos = 0, lastPos = 0,
-					$wrapper, $bgs = [], $bg,
-					k, v;
 
-			// Create BG wrapper, BGs.
-				$wrapper = document.createElement('div');
-					$wrapper.id = 'bg';
-					$body.appendChild($wrapper);
-
-				for (k in settings.images2) {
-
-					// Create BG.
-						$bg = document.createElement('div');
-							$bg.style.backgroundImage = 'url("' + k + '")';
-							$bg.style.backgroundPosition = settings.images2[k];
-							$wrapper.appendChild($bg);
-
-					// Add it to array.
-						$bgs.push($bg);
-                }
-            }
-	    
-            else {
-                // Vars.
-				var	pos = 0, lastPos = 0,
-					$wrapper, $bgs = [], $bg,
-					k, v;
-
-			// Create BG wrapper, BGs.
-				$wrapper = document.createElement('div');
-					$wrapper.id = 'bg';
-					$body.appendChild($wrapper);
-
-				for (k in settings.images3) {
-
-					// Create BG.
-						$bg = document.createElement('div');
-							$bg.style.backgroundImage = 'url("' + k + '")';
-							$bg.style.backgroundPosition = settings.images3[k];
-							$wrapper.appendChild($bg);
-
-					// Add it to array.
-						$bgs.push($bg);
-                }
-            }
-
+				}
 
 			// Main loop.
 				$bgs[pos].classList.add('visible');
@@ -159,366 +104,71 @@
 
 		})();
 
+	// Signup Form.
+		(function() {
+
+			// Vars.
+				var $form = document.querySelectorAll('#signup-form')[0],
+					$submit = document.querySelectorAll('#signup-form input[type="submit"]')[0],
+					$message;
+
+			// Bail if addEventListener isn't supported.
+				if (!('addEventListener' in $form))
+					return;
+
+			// Message.
+				$message = document.createElement('span');
+					$message.classList.add('message');
+					$form.appendChild($message);
+
+				$message._show = function(type, text) {
+
+					$message.innerHTML = text;
+					$message.classList.add(type);
+					$message.classList.add('visible');
+
+					window.setTimeout(function() {
+						$message._hide();
+					}, 3000);
+
+				};
+
+				$message._hide = function() {
+					$message.classList.remove('visible');
+				};
+
+			// Events.
+			// Note: If you're *not* using AJAX, get rid of this event listener.
+				$form.addEventListener('submit', function(event) {
+
+					event.stopPropagation();
+					event.preventDefault();
+
+					// Hide message.
+						$message._hide();
+
+					// Disable submit.
+						$submit.disabled = true;
+
+					// Process form.
+					// Note: Doesn't actually do anything yet (other than report back with a "thank you"),
+					// but there's enough here to piece together a working AJAX submission call that does.
+						window.setTimeout(function() {
+
+							// Reset form.
+								$form.reset();
+
+							// Enable submit.
+								$submit.disabled = false;
+
+							// Show message.
+								$message._show('success', 'Thank you!');
+								//$message._show('failure', 'Something went wrong. Please try again.');
+
+						}, 750);
+
+				});
+
+		})();
+
 })();
-
-function showTime(){
-
-	var objToday = new Date(),
-	weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
-	dayOfWeek = weekday[objToday.getDay()],
-	domEnder = function() { var a = objToday; if (/1/.test(parseInt((a + "").charAt(0)))) return "th"; a = parseInt((a + "").charAt(1)); return 1 == a ? "st" : 2 == a ? "nd" : 3 == a ? "rd" : "th" }(),
-	dayOfMonth = today + ( objToday.getDate() < 10) ? '0' + objToday.getDate() + domEnder : objToday.getDate() + domEnder,
-	months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
-	curMonth = months[objToday.getMonth()],
-	curYear = objToday.getFullYear(),
-	h = objToday.getHours();
-	m = objToday.getMinutes();
-	s = objToday.getSeconds();
-	var session = h >= 12 ? "PM" : "AM";
-	h = h % 12;
-	h = h ? h : 12;
-	m = m < 10 ? "0" + m : m;
-	s = s < 10 ? "0" + s : s;
-
-	window.onload = function timeLeft(endHour, endMinute, periodName, endTime, type) {
-
-		var dateEndTime = new Date(1000, 0, 1, endHour, endMinute);
-		var dateRightNow = new Date();
-		dateRightNow.setFullYear(1000, 0, 1);
-
-		timeDiff = dateEndTime - dateRightNow;
-		minutesApart = Math.floor((timeDiff/1000)/60);
-
-		if(type == "untilEnd") {
-
-			if(minutesApart <= 0) {
-				document.getElementById("minutesleft").innerText = "";
-				document.getElementById("minutesleft").textContent = "";
-				// change test below
-				document.getElementById("untilstart").innerText = "";
-				document.getElementById("untilstart").textContent = "";
-				// end of change
-			}
-			else if(minutesApart == 1) {
-				document.getElementById("minutesleft").innerText = minutesApart + " " + "minute until " + periodName + " " + "ends " + "(" + endTime + ")";
-				document.getElementById("minutesleft").textContent = minutesApart + " " + "minute until " + periodName + " " + "ends " + "(" + endTime + ")";
-			}
-			else {
-				document.getElementById("minutesleft").innerText = minutesApart + " " + "minutes until " + periodName + " " + "ends " + "(" + endTime + ")";
-				document.getElementById("minutesleft").textContent = minutesApart + " " + "minutes until " + periodName + " " + "ends " + "(" + endTime + ")";
-			}
-
-		}
-		else if(type == "untilStart") {
-
-			if(minutesApart <= 0) {
-				document.getElementById("untilstart").innerText = "";
-				document.getElementById("untilstart").textContent = "";
-				// change test below
-				document.getElementById("minutesleft").innerText = "";
-				document.getElementById("minutesleft").textContent = "";
-				// end of change
-			}
-			else if(minutesApart == 1) {
-				document.getElementById("untilstart").innerText = minutesApart + " " + "minute until " + periodName + " " + "starts " + "(" + endTime + ")";
-				document.getElementById("untilstart").textContent = minutesApart + " " + "minute until " + periodName + " " + "starts " + "(" + endTime + ")";
-			}
-			else {
-				document.getElementById("untilstart").innerText = minutesApart + " " + "minutes until " + periodName + " " + "starts " + "(" + endTime + ")";
-				document.getElementById("untilstart").textContent = minutesApart + " " + "minutes until " + periodName + " " + "starts " + "(" + endTime + ")";
-			}
-
-		}
-
-	}
-
-	mHours = objToday.getHours();
-	mMinutes = objToday.getMinutes();
-	mSeconds = objToday.getSeconds();
-
-	var mHours = objToday.getHours();
-	// if using 24 hour format, we can compare two times as strings. 
-	// However, if the hours is only one digit, we must add 0 in front.
-	if(mHours < 10) {
-		mHours = "0" + mHours;	
-	}
-	var time = mHours + ":" + m + "." + s;
-	var displayTime = h + ":" + m + "." + s + " " + session;
-	var today = dayOfWeek + "," + " " + curMonth + " " + dayOfMonth + "," + " " + curYear;
-	//console.log(today);
-	//console.log(time);
-	
-	// change tab title to this format: "time : period"
-	// document.title = time;
-
-	document.getElementById("clock").innerText = today;
-	document.getElementById("clock").textContent = today;
-	document.getElementById("date").innerText = displayTime;
-	document.getElementById("date").textContent = displayTime;
-
-	// May change to setTimeout(showTime, 1000); or setInterval(showTime, 1000); 
-	// Question is, how precise must my timing be?
-	//setInterval(showTime, 1000);
-	setTimeout(showTime, 1000);
-	
-	// Schedule according to 2019-2020 School Year
-	// Support for major holidays and winter/spring break will be added soon
-
-	var curPeriod = "No School";
-	
-	// log: make var greeting that changes based on holiday, special events, etc.
-	if(dayOfWeek == "Saturday" || dayOfWeek == "Sunday") {
-		document.getElementById("minutesleft").innerText = "Enjoy your weekend :D";
-	}
-	else if(dayOfWeek == "Monday" || dayOfWeek == "Tuesday" || dayOfWeek == "Friday") {
-		if(time >= "07:30.00" && time < "08:15.00") {
-			if(dayOfWeek == "Monday") {
-				curPeriod = "Staff Learning Hours";
-			}
-			else {
-				curPeriod = "Office Hours";
-			}	
-			timeLeft(8, 16, curPeriod, "8:15 AM", "untilEnd");
-			timeLeft(8, 21, "Period 1", "8:20 AM", "untilStart");	
-		}
-		else if(time >= "08:15.00" && time < "08:20.00") {
-			curPeriod = "Passing Period";
-			timeLeft(8, 21, "Period 1", "8:20 AM", "untilStart");
-			document.getElementById("minutesleft").innerText = "";
-			document.getElementById("minutesleft").textContent = "";
-		}
-		else if(time >= "08:20.00" && time < "09:08.00") {
-			curPeriod = "Period 1";
-			timeLeft(9, 9, curPeriod, "9:08 AM", "untilEnd");
-			timeLeft(9, 14, "Period 2", "9:13 AM", "untilStart");
-		}
-		else if(time >= "09:08.00" && time < "09:13.00") {
-			curPeriod = "Passing Period";
-			timeLeft(9, 14, "Period 2", "9:13 AM", "untilStart");
-			document.getElementById("minutesleft").innerText = "";
-			document.getElementById("minutesleft").textContent = "";
-		}
-		else if(time >= "09:13.00" && time < "10:01.00") {
-			curPeriod = "Period 2";
-			timeLeft(10, 2, curPeriod, "10:01 AM", "untilEnd");
-			timeLeft(10, 7, "Period 3", "10:06 AM", "untilStart");
-		}
-		else if(time >= "10:01.00" && time < "10:06.00") {
-			curPeriod = "Passing Period";
-			timeLeft(10, 7, "Period 3", "10:06 AM", "untilStart");
-			document.getElementById("minutesleft").innerText = "";
-			document.getElementById("minutesleft").textContent = "";
-		}
-		else if(time >= "10:06.00" && time < "10:54.00") {
-			curPeriod = "Period 3";
-			timeLeft(10, 55, curPeriod, "10:54 AM", "untilEnd");
-			timeLeft(11, 0, "Period 4", "10:59 AM", "untilStart");
-		}
-		else if(time >= "10:54.00" && time < "10:59.00") {
-			curPeriod = "Passing Period";
-			timeLeft(11, 0, "Period 4", "10:59 AM", "untilStart");
-			document.getElementById("minutesleft").innerText = "";
-			document.getElementById("minutesleft").textContent = "";
-		}
-		else if(time >= "10:59.00" && time < "11:47.00") {
-			curPeriod = "Period 4";
-			timeLeft(11, 48, curPeriod, "11:47 AM", "untilEnd");
-			timeLeft(11, 53, "Period 5", "11:52 AM", "untilStart");
-		}
-		else if(time >= "11:47.00" && time < "11:52.00") {
-			curPeriod = "Passing Period";
-			timeLeft(11, 53, "Period 5", "11:52 AM", "untilStart");
-			document.getElementById("minutesleft").innerText = "";
-			document.getElementById("minutesleft").textContent = "";
-		}
-		else if(time >= "11:52.00" && time < "12:40.00") {
-			curPeriod = "Period 5";
-			timeLeft(12, 41, curPeriod, "12:40 PM", "untilEnd");
-			timeLeft(12, 46, "Period 6", "12:45 PM", "untilStart");
-		}
-		else if(time >= "12:40.00" && time < "12:45.00") {
-			curPeriod = "Passing Period";
-			timeLeft(12, 46, "Period 6", "12:45 PM", "untilStart");
-			document.getElementById("minutesleft").innerText = "";
-			document.getElementById("minutesleft").textContent = "";
-		}
-		else if(time >= "12:45.00" && time < "13:33.00") {
-			curPeriod = "Period 6";
-			timeLeft(13, 34, curPeriod, "1:33 PM", "untilEnd");
-			timeLeft(13, 39, "Period 7", "1:38 PM", "untilStart");
-		}
-		else if(time >= "13:33.00" && time < "13:38.00") {
-			curPeriod = "Passing Period";
-			timeLeft(13, 39, "Period 7", "1:38 PM", "untilStart");
-			document.getElementById("minutesleft").innerText = "";
-			document.getElementById("minutesleft").textContent = "";
-		}
-		else if(time >= "13:38.00" && time < "14:26.00") {
-			curPeriod = "Period 7";
-			timeLeft(14, 27, curPeriod, "2:26 PM", "untilEnd");
-			timeLeft(14, 32, "Period 8", "2:31 PM", "untilStart");
-		}
-		else if(time >= "14:26.00" && time < "14:31.00") {
-			curPeriod = "Passing Period";
-			timeLeft(14, 32, "Period 8", "2:31 PM", "untilStart");
-			document.getElementById("minutesleft").innerText = "";
-			document.getElementById("minutesleft").textContent = "";
-		}
-		else if(time >= "14:31.00" && time < "15:19.00") {
-			curPeriod = "Period 8";
-			timeLeft(15, 20, curPeriod, "3:19 PM", "untilEnd");
-			timeLeft(15, 19, "Office Hours", "3:19 PM", "untilStart");
-		}
-		else if(time >= "15:19.00" && time < "15:30.00") {
-			curPeriod = "Office Hours";
-			timeLeft(15, 31, curPeriod, "3:30 PM", "untilEnd");
-		}
-		else {
-			document.getElementById("minutesleft").innerText = "Enjoy the rest of your day ^_^";
-		}
-	}
-	else if(dayOfWeek == "Wednesday") {
-		if(time >= "07:30.00" && time < "08:15.00") {
-			curPeriod = "Profressional Development";
-			timeLeft(8, 16, curPeriod, "8:15 AM", "untilEnd");
-			timeLeft(8, 21, "Period 1", "8:20 AM", "untilStart");
-		}
-		else if(time >= "08:15.00" && time < "08:20.00") {
-			curPeriod = "Passing Period";
-			timeLeft(8, 21, "Period 3", "8:20 AM", "untilStart");
-			document.getElementById("minutesleft").innerText = "";
-			document.getElementById("minutesleft").textContent = "";
-		}
-		else if(time >= "08:20.00" && time < "09:48.00") {
-			curPeriod = "Period 3";
-			timeLeft(9, 49, curPeriod, "9:48 AM", "untilEnd");
-			timeLeft(9, 54, "Period 1", "9:53 AM", "untilStart");
-		}
-		else if(time >= "09:48.00" && time < "09:53.00") {
-			curPeriod = "Passing Period";
-			timeLeft(9, 54, "Period 1", "9:53 AM", "untilStart");
-			document.getElementById("minutesleft").innerText = "";
-			document.getElementById("minutesleft").textContent = "";
-		}
-		else if(time >= "09:53.00" && time < "11:25.00") {
-			curPeriod = "Period 1";
-			document.getElementById("period").innerText = curPeriod;
-			document.getElementById("period").textContent = curPeriod;
-			timeLeft(11, 26, curPeriod, "11:25 AM", "untilEnd");
-			timeLeft(11, 31, "Period 7", "11:30 AM", "untilStart");
-		}
-		else if(time >= "11:25.00" && time < "11:30.00") {
-			curPeriod = "Passing Period";
-			timeLeft(11, 31, "Period 7", "11:30 AM", "untilStart");
-			document.getElementById("minutesleft").innerText = "";
-			document.getElementById("minutesleft").textContent = "";
-		}
-		else if(time >= "11:30.00" && time < "13:46.00") {
-			curPeriod = "Period 7";
-			timeLeft(13, 47, curPeriod, "1:46 PM", "untilEnd");
-			timeLeft(13, 52, "Period 5", "1:51 PM", "untilStart");
-		}
-		else if(time >= "13:46.00" && time < "13:51.00") {
-			curPeriod = "Passing Period";
-			timeLeft(13, 52, "Period 5", "1:51 PM", "untilStart");
-			document.getElementById("minutesleft").innerText = "";
-			document.getElementById("minutesleft").textContent = "";
-		}
-		else if(time >= "13:51.00" && time < "15:19.00") {
-			curPeriod = "Period 5";
-			document.getElementById("period").innerText = curPeriod;
-			document.getElementById("period").textContent = curPeriod;
-			timeLeft(15, 20, curPeriod, "3:19 PM", "untilEnd");
-			timeLeft(15, 19, "Office Hours", "3:19 PM", "untilStart");
-		}
-		else if(time >= "15:19.00" && time < "15:30.00") {
-			curPeriod = "Office Hours";
-			document.getElementById("period").innerText = curPeriod;
-			document.getElementById("period").textContent = curPeriod;
-			timeLeft(15, 31, curPeriod, "3:30 PM", "untilEnd");
-		}
-		else {
-			document.getElementById("minutesleft").innerText = "Enjoy the rest of your day :)";
-		}
-	}
-	else if(dayOfWeek == "Thursday") {
-		if(time >= "07:30.00" && time < "08:15.00") {
-			// Staff Meeting 2nd Thursday of every month
-			curPeriod = "Office Hours";
-			document.getElementById("period").innerText = curPeriod;
-			document.getElementById("period").textContent = curPeriod;
-			timeLeft(8, 16, curPeriod, "8:15 AM", "untilEnd");
-			timeLeft(8, 21, "Period 4", "8:20 AM", "untilStart");
-		}
-		else if(time >= "08:15.00" && time < "08:20.00") {
-			curPeriod = "Passing Period";
-			timeLeft(8, 21, "Period 4", "8:20 AM", "untilStart");
-			document.getElementById("minutesleft").innerText = "";
-			document.getElementById("minutesleft").textContent = "";
-		}
-		else if(time >= "08:20.00" && time < "09:48.00") {
-			curPeriod = "Period 4";
-			document.getElementById("period").innerText = curPeriod;
-			document.getElementById("period").textContent = curPeriod;
-			timeLeft(9, 49, curPeriod, "9:48 AM", "untilEnd");
-			timeLeft(9, 54, "Period 2", "9:53 AM", "untilStart");
-		}
-		else if(time >= "09:48.00" && time < "09:53.00") {
-			curPeriod = "Passing Period";
-			timeLeft(9, 54, "Period 2", "9:53 AM", "untilStart");
-			document.getElementById("minutesleft").innerText = "";
-			document.getElementById("minutesleft").textContent = "";
-		}
-		else if(time >= "09:53.00" && time < "11:25.00") {
-			curPeriod = "Period 2";
-			document.getElementById("period").innerText = curPeriod;
-			document.getElementById("period").textContent = curPeriod;
-			timeLeft(11, 26, curPeriod, "11:25 AM", "untilEnd");
-			timeLeft(11, 31, "Period 8", "11:30 AM", "untilStart");
-		}
-		else if(time >= "11:25.00" && time < "11:30.00") {
-			curPeriod = "Passing Period";
-			timeLeft(11, 31, "Period 8", "11:30 AM", "untilStart");
-			document.getElementById("minutesleft").innerText = "";
-			document.getElementById("minutesleft").textContent = "";
-		}
-		else if(time >= "11:30.00" && time < "13:46.00") {
-			curPeriod = "Period 8";
-			document.getElementById("period").innerText = curPeriod;
-			document.getElementById("period").textContent = curPeriod;
-			timeLeft(13, 47, curPeriod, "1:46 PM", "untilEnd");
-			timeLeft(13, 52, "Period 6", "1:51 PM", "untilStart");
-		}
-		else if(time >= "13:46.00" && time < "13:51.00") {
-			curPeriod = "Passing Period";
-			timeLeft(11, 28, "Period 6", "1:51 PM", "untilStart");
-			document.getElementById("minutesleft").innerText = "";
-			document.getElementById("minutesleft").textContent = "";
-		}
-		else if(time >= "13:51.00" && time < "15:19.00") {
-			curPeriod = "Period 6";
-			document.getElementById("period").innerText = curPeriod;
-			document.getElementById("period").textContent = curPeriod;
-			timeLeft(15, 20, curPeriod, "3:19 PM", "untilEnd");
-			// originally was timeLeft(15, 20...). Original problem was that at 3:19:00PM,
-			// the untilStart code did not go away until 3:20:00pm.
-			// so far, all have been changed. change back to 15, 20 if not work.
-			timeLeft(15, 19, "Office Hours", "3:19 PM", "untilStart");
-		}
-		else if(time >= "15:19.00" && time < "15:30.00") {
-			curPeriod = "Office Hours";
-			document.getElementById("period").innerText = curPeriod;
-			document.getElementById("period").textContent = curPeriod;
-			timeLeft(15, 31, curPeriod, "3:30 PM", "untilEnd");
-		}
-		else {
-			document.getElementById("minutesleft").innerText = "Enjoy the rest of your day :)";
-		}
-	}
-	// "var displayTime" is in 12hr format while "var time" is in 24hr format.
-	document.title = curPeriod + " | " + displayTime;
-	document.getElementById("period").innerText = curPeriod;
-	document.getElementById("period").textContent = curPeriod;
-}
-
-showTime();
