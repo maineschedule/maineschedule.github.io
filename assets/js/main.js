@@ -180,7 +180,7 @@ function showTime(){
 	m = m < 10 ? "0" + m : m;
 	s = s < 10 ? "0" + s : s;
 
-	window.onload = function timeLeft(endHour, endMinute, periodName, endTime, type) {
+	function timeLeft(endHour, endMinute, periodName, endTime, type) {
 
 		var dateEndTime = new Date(1000, 0, 1, endHour, endMinute);
 		var dateRightNow = new Date();
