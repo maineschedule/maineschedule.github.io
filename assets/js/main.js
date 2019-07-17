@@ -2,6 +2,8 @@
 
 	"use strict";
 
+	var	$body = document.querySelector('body');
+
 	// Methods/polyfills.
 
 		// classList | (c) @remy | github.com/remy/polyfills | rem.mit-license.org
@@ -13,29 +15,37 @@
 		// window.addEventListener
 			(function(){if("addEventListener"in window)return;window.addEventListener=function(type,f){window.attachEvent("on"+type,f)}})();
 
-	// Vars.
-		var	$body = document.querySelector('body');
-
-	// Disable animations/transitions until everything's loaded.
-		$body.classList.add('is-loading');
-
+	// Play initial animations on page load.
 		window.addEventListener('load', function() {
 			window.setTimeout(function() {
-				$body.classList.remove('is-loading');
+				$body.classList.remove('is-preload');
 			}, 100);
 		});
 
 	// Slideshow Background.
+
 		(function() {
 
 			// Settings.
-				var settings = {
+
+			var settings = {
 
 					// Images (in the format of 'url': 'alignment').
-						images: {
-							'assets/images/bg01.jpg': 'center',
-							'assets/images/bg02.jpg': 'center',
-							'assets/images/bg03.jpg': 'center'
+
+						images1: {
+							'images/bg01.jpg': 'center',
+							'images/bg02.jpg': 'center',
+							'images/bg03.jpg': 'center'
+						},
+						images2: {
+							'images/bg02.jpg': 'center',
+							'images/bg01.jpg': 'center',
+							'images/bg03.jpg': 'center'
+						},
+						images3: {
+							'images/bg03.jpg': 'center',
+							'images/bg02.jpg': 'center',
+							'images/bg01.jpg': 'center'
 						},
 
 					// Delay.
@@ -43,7 +53,10 @@
 
 				};
 
-			// Vars.
+	    
+            var num = Math.floor(Math.random() * 3) + 1;
+            if(num == 1) {
+                // Vars.
 				var	pos = 0, lastPos = 0,
 					$wrapper, $bgs = [], $bg,
 					k, v;
@@ -53,18 +66,66 @@
 					$wrapper.id = 'bg';
 					$body.appendChild($wrapper);
 
-				for (k in settings.images) {
+				for (k in settings.images1) {
 
 					// Create BG.
 						$bg = document.createElement('div');
 							$bg.style.backgroundImage = 'url("' + k + '")';
-							$bg.style.backgroundPosition = settings.images[k];
+							$bg.style.backgroundPosition = settings.images1[k];
 							$wrapper.appendChild($bg);
 
 					// Add it to array.
 						$bgs.push($bg);
+                }
+            }
+            else if(num == 2) {
+                // Vars.
+				var	pos = 0, lastPos = 0,
+					$wrapper, $bgs = [], $bg,
+					k, v;
 
-				}
+			// Create BG wrapper, BGs.
+				$wrapper = document.createElement('div');
+					$wrapper.id = 'bg';
+					$body.appendChild($wrapper);
+
+				for (k in settings.images2) {
+
+					// Create BG.
+						$bg = document.createElement('div');
+							$bg.style.backgroundImage = 'url("' + k + '")';
+							$bg.style.backgroundPosition = settings.images2[k];
+							$wrapper.appendChild($bg);
+
+					// Add it to array.
+						$bgs.push($bg);
+                }
+            }
+	    
+            else {
+                // Vars.
+				var	pos = 0, lastPos = 0,
+					$wrapper, $bgs = [], $bg,
+					k, v;
+
+			// Create BG wrapper, BGs.
+				$wrapper = document.createElement('div');
+					$wrapper.id = 'bg';
+					$body.appendChild($wrapper);
+
+				for (k in settings.images3) {
+
+					// Create BG.
+						$bg = document.createElement('div');
+							$bg.style.backgroundImage = 'url("' + k + '")';
+							$bg.style.backgroundPosition = settings.images3[k];
+							$wrapper.appendChild($bg);
+
+					// Add it to array.
+						$bgs.push($bg);
+                }
+            }
+
 
 			// Main loop.
 				$bgs[pos].classList.add('visible');
@@ -97,6 +158,8 @@
 				}, settings.delay);
 
 		})();
+
+})();
 
 function showTime(){
 
