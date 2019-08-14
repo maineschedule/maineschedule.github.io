@@ -379,9 +379,9 @@ function showTime(){
 	}
 	else if(dayOfWeek == "Wednesday") {
 		if(time >= "07:30.00" && time < "08:15.00") {
-			curPeriod = "Profressional Development";
+			curPeriod = "Teacher Meetings";
 			timeLeft(8, 16, curPeriod, "8:15 AM", "untilEnd");
-			timeLeft(8, 21, "Period 1", "8:20 AM", "untilStart");
+			timeLeft(8, 21, "Period 3", "8:20 AM", "untilStart");
 		}
 		else if(time >= "08:15.00" && time < "08:20.00") {
 			curPeriod = "Passing Period";
