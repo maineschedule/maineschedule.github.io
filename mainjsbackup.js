@@ -27,6 +27,11 @@
 		(function() {
 
 			// Settings.
+			window.addEventListener('load', function() {
+			window.setTimeout(function() {
+				$body.classList.remove('is-preload');
+			}, 100);
+		});
 
 			var settings = {
 
@@ -101,12 +106,36 @@
 						$bgs.push($bg);
                 }
             }
+			else {
+                // Vars.
+				var	pos = 0, lastPos = 0,
+					$wrapper, $bgs = [], $bg,
+					k, v;
+
+			// Create BG wrapper, BGs.
+				$wrapper = document.createElement('div');
+					$wrapper.id = 'bg';
+					$body.appendChild($wrapper);
+
+				for (k in settings.images3) {
+
+					// Create BG.
+						$bg = document.createElement('div');
+							$bg.style.backgroundImage = 'url("' + k + '")';
+							$bg.style.backgroundPosition = settings.images3[k];
+							$wrapper.appendChild($bg);
+
+					// Add it to array.
+						$bgs.push($bg);
+                }
+            }
 	    
             else {
                 // Vars.
 				var	pos = 0, lastPos = 0,
 					$wrapper, $bgs = [], $bg,
 					k, v;
+		    $bgs.push($bg);
 
 			// Create BG wrapper, BGs.
 				$wrapper = document.createElement('div');
