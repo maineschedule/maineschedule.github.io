@@ -8,15 +8,6 @@
 		<link rel="icon" href="images/icon.png">
 		<!-- header added -->
 		<style type="text/css">
-			.clock{
-				position: absolute;
-				top: 52%;
-				left: 50%;
-				transform: translateX(-50%) translateY(-50%);
-				font-size: 100%;
-				white-space: nowrap;
-			}
-
 			.date{
 				position: absolute;
 				top: 45%;
@@ -52,13 +43,23 @@
 				font-size: 95%;
 				white-space: nowrap;
 			}
+			.clock{
+				position: absolute;
+				top: 52%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				font-size: 100%;
+				white-space: nowrap;
+			}
+
 		</style>
 	</head>
 	<body class="is-preload">
-				<div id="MyClockDisplay" class="clock"></div>
 				<div id="date" class="date"></div>
 				<div id="period" class="period"></div>
 				<div id="minutesleft" class="minutesleft"></div>
+				<div id="MyClockDisplay" class="clock"></div>
+				
 				<div id="untilstart" class="untilstart"></div>
 				<script type="text/javascript">
 
@@ -381,6 +382,18 @@
 								document.getElementById("period").innerText = "Passing Period";
 								document.getElementById("period").textContent = "Passing Period";
 								timeLeft(11, 26, "5X", "11:25 AM", "untilStart");
+							}
+							else if(time >= "11:25.00" && time < "12:10.00") {
+								document.getElementById("period").innerText = "Period 6X";
+								document.getElementById("period").textContent = "Period 6X";
+								timeLeft(12, 11, "5X", "12:10 PM", "untilEnd");
+								timeLeft(12, 11, "5Y", "12:10 PM", "untilStart");
+							}
+							else if(time >= "12:10.00" && time < "12:55.00") {
+								document.getElementById("period").innerText = "Period 6Y";
+								document.getElementById("period").textContent = "Period 6Y";
+								timeLeft(12, 56, "5Y", "12:10 PM", "untilEnd");
+								timeLeft(12, 56, "5Z", "12:10 PM", "untilStart");
 							}
 							else if(time >= "11:25.00" && time < "12:10.00") {
 								document.getElementById("period").innerText = "Period 6X";
