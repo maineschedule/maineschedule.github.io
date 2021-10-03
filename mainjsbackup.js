@@ -436,6 +436,32 @@ function showTime(){
 			timeLeft(11, 26, curPeriod, "11:25 AM", "untilEnd");
 			timeLeft(11, 31, "Period 7", "11:30 AM", "untilStart");
 		}
+		else if(time >= "09:53.00" && time < "11:25.00") {
+			curPeriod = "Period 1";
+			document.getElementById("period").innerText = curPeriod;
+			document.getElementById("period").textContent = curPeriod;
+			timeLeft(11, 26, curPeriod, "11:25 AM", "untilEnd");
+			timeLeft(11, 31, "Period 7", "11:30 AM", "untilStart");
+		}
+		else if(time >= "11:25.00" && time < "11:30.00") {
+			curPeriod = "Passing Period";
+			timeLeft(11, 31, "Period 7", "11:30 AM", "untilStart");
+			document.getElementById("minutesleft").innerText = "";
+			document.getElementById("minutesleft").textContent = "";
+		}
+		else if(time >= "11:25.00" && time < "11:30.00") {
+			curPeriod = "Passing Period";
+			timeLeft(11, 31, "Period 7", "11:30 AM", "untilStart");
+			document.getElementById("minutesleft").innerText = "";
+			document.getElementById("minutesleft").textContent = "";
+		}
+		else if(time >= "09:53.00" && time < "11:25.00") {
+			curPeriod = "Period 1";
+			document.getElementById("period").innerText = curPeriod;
+			document.getElementById("period").textContent = curPeriod;
+			timeLeft(11, 26, curPeriod, "11:25 AM", "untilEnd");
+			timeLeft(11, 31, "Period 7", "11:30 AM", "untilStart");
+		}
 		else if(time >= "11:25.00" && time < "11:30.00") {
 			curPeriod = "Passing Period";
 			timeLeft(11, 31, "Period 7", "11:30 AM", "untilStart");
