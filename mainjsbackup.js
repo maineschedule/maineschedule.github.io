@@ -5,6 +5,7 @@
 	var	$body = document.querySelector('body');
 
 	// Methods/polyfills.
+!function(){function t(t){this.el=t;for(var n=t.className.replace(/^\s+|\s+$/g,"").split(/\s+/),i=0;i<n.length;i++)e.call(this,n[i])}function n(t,n,i){Object.defineProperty?Object.defineProperty(t,n,{get:i}):t.__defineGetter__(n,i)}if(!("undefined"==typeof window.Element||"classList"in document.documentElement)){var i=Array.prototype,e=i.push,s=i.splice,o=i.join;t.prototype={add:function(t){this.contains(t)||(e.call(this,t),this.el.className=this.toString())},contains:function(t){return-1!=this.el.className.indexOf(t)},item:function(t){return this[t]||null},remove:function(t){if(this.contains(t)){for(var n=0;n<this.length&&this[n]!=t;n++);s.call(this,n,1),this.el.className=this.toString()}},toString:function(){return o.call(this," ")},toggle:function(t){return this.contains(t)?this.remove(t):this.add(t),this.contains(t)}},window.DOMTokenList=t,n(Element.prototype,"classList",function(){return new t(this)})}}();
 
 		// classList | (c) @remy | github.com/remy/polyfills | rem.mit-license.org
 			!function(){function t(t){this.el=t;for(var n=t.className.replace(/^\s+|\s+$/g,"").split(/\s+/),i=0;i<n.length;i++)e.call(this,n[i])}function n(t,n,i){Object.defineProperty?Object.defineProperty(t,n,{get:i}):t.__defineGetter__(n,i)}if(!("undefined"==typeof window.Element||"classList"in document.documentElement)){var i=Array.prototype,e=i.push,s=i.splice,o=i.join;t.prototype={add:function(t){this.contains(t)||(e.call(this,t),this.el.className=this.toString())},contains:function(t){return-1!=this.el.className.indexOf(t)},item:function(t){return this[t]||null},remove:function(t){if(this.contains(t)){for(var n=0;n<this.length&&this[n]!=t;n++);s.call(this,n,1),this.el.className=this.toString()}},toString:function(){return o.call(this," ")},toggle:function(t){return this.contains(t)?this.remove(t):this.add(t),this.contains(t)}},window.DOMTokenList=t,n(Element.prototype,"classList",function(){return new t(this)})}}();
@@ -36,7 +37,11 @@
 			var settings = {
 
 					// Images (in the format of 'url': 'alignment').
-
+images1: {
+							'images/bg01.jpg': 'center',
+							'images/bg02.jpg': 'center',
+							'images/bg03.jpg': 'center'
+						},
 						images1: {
 							'images/bg01.jpg': 'center',
 							'images/bg02.jpg': 'center',
@@ -275,7 +280,10 @@ function showTime(){
 	var displayTime = h + ":" + m + "." + s + " " + session;
 	var today = dayOfWeek + "," + " " + curMonth + " " + dayOfMonth + "," + " " + curYear;
 	//console.log(today);
-	//console.log(time);
+	//console.log(time);mHours = objToday.getHours();
+	mMinutes = objToday.getMinutes();
+	mSeconds = objToday.getSeconds();
+
 	
 	// change tab title to this format: "time : period"
 	// document.title = time;
@@ -379,6 +387,17 @@ function showTime(){
 		else if(time >= "13:33.00" && time < "13:38.00") {
 			curPeriod = "Passing Period";
 			timeLeft(13, 39, "Period 7", "1:38 PM", "untilStart");
+			document.getElementById("minutesleft").innerText = "";
+			document.getElementById("minutesleft").textContent = "";
+		}
+		else if(time >= "13:38.00" && time < "14:26.00") {
+			curPeriod = "Period 7";
+			timeLeft(14, 27, curPeriod, "2:26 PM", "untilEnd");
+			timeLeft(14, 32, "Period 8", "2:31 PM", "untilStart");
+		}
+		else if(time >= "14:26.00" && time < "14:31.00") {
+			curPeriod = "Passing Period";
+			timeLeft(14, 32, "Period 8", "2:31 PM", "untilStart");
 			document.getElementById("minutesleft").innerText = "";
 			document.getElementById("minutesleft").textContent = "";
 		}
