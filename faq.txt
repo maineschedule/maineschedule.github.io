@@ -1,0 +1,11 @@
+What is Maine Schedule?
+
+A schedule for Maine South High School.
+
+Who made Maine Schedule?
+
+Evan Yang, MSHS, 2020.
+
+Does Maine Schedule account for the block schedule?
+
+It was updated to work with the new block schedule.
