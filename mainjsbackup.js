@@ -307,7 +307,7 @@ function showTime(){
 	mSeconds = objToday.getSeconds();
 
 	var mHours = objToday.getHours();
-	// if using 24 hour format, we can compare two times as strings. 
+	// If using 24 hour format, we can compare two times as strings. 
 	// However, if the hours is only one digit, we must add 0 in front.
 	if(mHours < 10) {
 		mHours = "0" + mHours;	
@@ -321,7 +321,7 @@ function showTime(){
 	mSeconds = objToday.getSeconds();
 
 	
-	// change tab title to this format: "time : period"
+	// Change tab title to this format: "time : period"
 	// document.title = time;
 
 	document.getElementById("clock").innerText = today;
