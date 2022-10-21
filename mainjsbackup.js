@@ -72,6 +72,21 @@ images1: {
 							'images/bg02.jpg': 'center',
 							'images/bg01.jpg': 'center'
 						},
+						images1: {
+							'images/bg01.jpg': 'center',
+							'images/bg02.jpg': 'center',
+							'images/bg03.jpg': 'center'
+						},
+						images2: {
+							'images/bg02.jpg': 'center',
+							'images/bg01.jpg': 'center',
+							'images/bg03.jpg': 'center'
+						},
+						images3: {
+							'images/bg03.jpg': 'center',
+							'images/bg02.jpg': 'center',
+							'images/bg01.jpg': 'center'
+						},
 
 					// Delay.
 						delay: 6000
