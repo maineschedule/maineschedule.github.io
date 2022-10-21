@@ -34,3 +34,12 @@ Future ideas:
     4. [NOT STARTED] Summerasdsa school schedule.
     5. [NOT STARTED] Integration with Maine East and Maine West High School.
     6. [VERIFYING...] Make tab title update dynamically with period and time.
+Future ideas:
+  Priority:
+    1. [NOT STARTED] Integrate signing in using school gmail account (s207 organization) which will allow for custom backgrounds 
+       and self-made schedulues.
+    2. [NOT STARTED] Holidays, special events (food drives, assembly, etc).
+    3. [NOT STARTED] Winter, spring, summer breaks.
+    4. [NOT STARTED] Summerdasda school schedule.
+    5. [NOT STARTED] Integration witdsdsh Maine East and Maine West High School.
+    6. [VERIFYING...] Make tab title update dynamically with period and time.
